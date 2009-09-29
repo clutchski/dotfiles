@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# remove all vim swap files in the working dir
+
+find $pwd -name ".*.sw*" -exec rm "{}" \;

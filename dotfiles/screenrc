@@ -1,0 +1,5 @@
+startup_message off 
+bind + resize +3
+bind - resize -3
+vbell off 
+defscrollback 10000
