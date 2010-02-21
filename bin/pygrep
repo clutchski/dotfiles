@@ -1,5 +1,0 @@
-#!/bin/bash
-#
-# grep in python files in the working env
-
-find $pwd -name "*.py" -exec grep -Hni $* "{}" \;
