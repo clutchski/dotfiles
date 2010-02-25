@@ -10,3 +10,6 @@ alias jsack="ack --js"
 alias pyack="ack --python"
 alias rback="ack --ruby"
 
+gitvimdiff () {
+    git diff $* | vimdiff -
+}
