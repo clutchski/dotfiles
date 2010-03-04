@@ -9,3 +9,10 @@
     co = checkout
     df = diff
     lg = log -p
+
+[core]
+    whitespace = trailing-space,space-before-tab,cr-at-eol
+
+[color]
+    ui = true
+    diff = true
