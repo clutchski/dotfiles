@@ -13,3 +13,5 @@ alias rback="ack --ruby"
 gitvimdiff () {
     git diff $* | vimdiff -
 }
+
+alias findname="find . -name "
