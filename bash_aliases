@@ -1,7 +1,8 @@
 
 alias ll="ls -l"
 
-alias ack="ack-grep"
+#uncomment on ubuntu
+#alias ack="ack-grep"
 alias aack="ack --all"
 alias cssack="ack --css"
 alias fmack="ack --fm"
