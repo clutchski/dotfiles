@@ -1,7 +1,7 @@
 
 alias ll="ls -l"
 
-which ack-grep
+which ack-grep > /dev/null
 if [ $? -eq 0 ]
 then
     alias ack="ack-grep"
