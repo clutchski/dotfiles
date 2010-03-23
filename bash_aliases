@@ -1,3 +1,10 @@
+# vim: set filetype=bash :
+
+# env variables
+
+export EDITOR=vim
+
+# aliases
 
 alias ll="ls -l"
 
