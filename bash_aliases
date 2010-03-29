@@ -8,7 +8,7 @@ export EDITOR=vim
 
 alias ll="ls -l"
 
-which ack-grep > /dev/null
+which ack-grep &> /dev/null
 if [ $? -eq 0 ]
 then
     alias ack="ack-grep"
