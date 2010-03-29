@@ -1,6 +1,6 @@
 [user]
-    name = clutchski
-    email = clutchski@gmail.com
+    name = #NAME#
+    email = #EMAIL#
 
 [alias]
     st = status
