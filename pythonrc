@@ -1,3 +1,4 @@
+# vim: syn=python
 # include tab completion in the python interpretor
 
 try:

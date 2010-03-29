@@ -11,7 +11,7 @@ read email
 sed -e "s|#NAME#|$name|" -e "s|#EMAIL#|$email|" gitconfig.template > gitconfig
 
 # deploy the files
-for f in screenrc vimrc bash_aliases ackrc gitconfig gitignore rc.py
+for f in screenrc vimrc bash_aliases ackrc gitconfig gitignore pythonrc
 do
     cp $f ~/.${f}
 done
