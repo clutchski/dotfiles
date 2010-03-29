@@ -4,12 +4,11 @@ set -e
 
 # template git profile
 
-cp gitconfig.template gitconfig
 echo
 echo "enter your global git profile: your@email.com Your Name"
 read email name
 
-sed -i -e "s|#NAME#|$name|" -e "s|#EMAIL#|$email|" gitconfig
+sed -e "s|#NAME#|$name|" -e "s|#EMAIL#|$email|" gitconfig.template > gitconfig
 
 # deploy the files
 
