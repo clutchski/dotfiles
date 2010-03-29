@@ -2,6 +2,7 @@
 
 # env variables
 
+export PYTHONSTARTUP=~/.rc.py
 export EDITOR=vim
 
 # aliases
