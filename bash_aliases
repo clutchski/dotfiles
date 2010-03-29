@@ -1,4 +1,4 @@
-# vim: set filetype=bash :
+# vim: set filetype=bash 
 
 # env variables
 
