@@ -1,24 +1,31 @@
-" tabs
+"
+" behaviour
+"
+
+set backspace=indent,eol,start
+set wildmenu " command line tab completion
+
+
+"
+" view
+"
+
+colorscheme peachpuff
+syntax on
+set ruler
+set number
+
+
+"
+" formatting
+"
+
 set expandtab
 set smarttab
 set autoindent
 set shiftwidth=4
 set softtabstop=4
-
-" width
 set textwidth=79
-
-" Allow backspacing over autoindent, line breaks and start of insert action
-set backspace=indent,eol,start
-
-" command line tab completion
-set wildmenu
-
-" view options
-colorscheme peachpuff
-syntax on
-set ruler
-set number
 
 " file type tab settings
 if has("autocmd")
