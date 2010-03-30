@@ -1,14 +1,22 @@
 # vim: syn=sh 
 
+#
 # env variables
+#
 
 export PYTHONSTARTUP=~/.pythonrc
 export EDITOR=vim
 
+#
 # aliases
+#
 
 alias ll="ls -l"
+alias du="du -h"
+alias df="df -h"
+alias findname="find . -name "
 
+# ack
 which ack-grep &> /dev/null
 if [ $? -eq 0 ]
 then
@@ -26,5 +34,3 @@ alias rback="ack --ruby"
 gitvimdiff () {
     git diff $* | vimdiff -
 }
-
-alias findname="find . -name "
