@@ -10,11 +10,14 @@ read email
 
 sed -e "s|#NAME#|$name|" -e "s|#EMAIL#|$email|" gitconfig.template > gitconfig
 
-# deploy the files
+# deploy
 for f in screenrc vimrc bash_aliases ackrc gitconfig gitignore pythonrc
 do
     cp $f ~/.${f}
 done
+
+mkdir -p ~/.vim
+cp -r vim/* ~/.vim
 
 # clean-up
 rm gitconfig
