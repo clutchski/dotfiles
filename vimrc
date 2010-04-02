@@ -4,6 +4,7 @@
 
 set backspace=indent,eol,start
 set wildmenu " command line tab completion
+abbrev RE <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'e **' : 'RE')<CR>
 
 "
 " view
