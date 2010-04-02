@@ -11,7 +11,7 @@ export EDITOR=vim
 # aliases
 #
 
-alias ll="ls -l"
+alias ll="ls -lh"
 alias du="du -h"
 alias df="df -h"
 alias findname="find . -name "
