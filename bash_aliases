@@ -16,6 +16,10 @@ alias la="ll -a"
 alias du="du -h"
 alias df="df -h"
 alias findname="find . -name "
+alias rmswp="find . -name \".*.sw*\" -exec rm {} \;"
+vimglob () {
+    vim `find . -name $*`
+}
 
 # ack
 which ack-grep &> /dev/null
