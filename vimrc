@@ -33,4 +33,5 @@ if has("autocmd")
     autocmd FileType c,cpp  set ts=4 sw=4 cindent
     autocmd FileType javascript  set ts=2 sw=2 cindent et
     autocmd FileType docbk,html,xhtml,xml,css set ts=2 sw=2
+    autocmd FileType less set ts=2 sw=2
 endif
