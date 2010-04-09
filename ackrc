@@ -1,1 +1,2 @@
 --type-set=fm=.ftl
+--type-set=spec=.spec
