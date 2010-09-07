@@ -7,6 +7,7 @@
 export PYTHONSTARTUP=~/.pythonrc
 export EDITOR=vim
 export SCREENDIR=~/.screen
+export PATH=$PATH:~/bin
 
 #
 # aliases
