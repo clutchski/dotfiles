@@ -18,6 +18,7 @@ alias du="du -h"
 alias df="df -h"
 alias findname="find . -name "
 alias rmswp="find . -name \".*.sw*\" -exec rm {} \;"
+alias ip="ifconfig -a | grep \"inet\""
 vimglob () {
     vim `find . -name $*`
 }
