@@ -1,9 +1,19 @@
+
 "
 " behaviour
 "
 
 set backspace=indent,eol,start
-set wildmenu " command line tab completion
+set history=1000         " remember more commands and search history
+set nobackup
+set noerrorbells         " don't beep
+set noswapfile
+set pastetoggle=<F2>
+set undolevels=1000      
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildmenu             " command line tab completion
+
+cmap w!! w !sudo tee % >/dev/null
 abbrev RE <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'e **' : 'RE')<CR>
 
 "
