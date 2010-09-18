@@ -1,4 +1,1 @@
-" haml scss
-au BufNewFile,BufRead *.scss     set filetype=css
-
-
+au BufRead,BufNewFile *.scss	set filetype=scss
