@@ -7,7 +7,6 @@ set backspace=indent,eol,start
 set history=1000         " remember more commands and search history
 set nobackup
 set noerrorbells         " don't beep
-set noswapfile
 set pastetoggle=<F2>
 set undolevels=1000      
 set wildignore=*.swp,*.bak,*.pyc,*.class
@@ -15,6 +14,22 @@ set wildmenu             " command line tab completion
 
 cmap w!! w !sudo tee % >/dev/null
 abbrev RE <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'e **' : 'RE')<CR>
+
+nnoremap ; :
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
 
 "
 " view
