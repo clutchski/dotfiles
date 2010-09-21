@@ -1,2 +1,3 @@
 --type-set=fm=.ftl
---type-set=spec=.spec
+--type-set=fm=.ftl
+--type-set=scss=.scss
