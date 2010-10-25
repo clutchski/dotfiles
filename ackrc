@@ -1,3 +1,5 @@
 --type-set=fm=.ftl
+--type-set=mako=.mako
 --type-set=spec=.spec
 --type-set=scss=.scss
+--type-add=python=.mako
