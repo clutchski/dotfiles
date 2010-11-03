@@ -21,12 +21,5 @@ cp -r vim/* ~/.vim
 
 mkdir -p ~/bin
 
-which git &> /dev/null
-if [ $? -eq 0 ]
-then
-    git config --global core.excludesfile ~/.gitignore
-fi
-
-
 # clean-up
 rm gitconfig
