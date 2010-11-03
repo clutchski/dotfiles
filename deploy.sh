@@ -8,7 +8,7 @@ read name
 echo "enter your global git e-mail:"
 read email
 
-sed -e "s|#HOME|$HOME|" -e "s|#NAME#|$name|" -e "s|#EMAIL#|$email|" gitconfig.template > gitconfig
+sed -e "s|#HOME#|$HOME|" -e "s|#NAME#|$name|" -e "s|#EMAIL#|$email|" gitconfig.template > gitconfig
 
 # deploy
 for f in screenrc vimrc bash_aliases ackrc gitconfig gitignore pythonrc
