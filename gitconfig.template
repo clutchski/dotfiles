@@ -12,6 +12,7 @@
 
 [core]
     whitespace = trailing-space,space-before-tab,cr-at-eol
+    excludesfile = #HOME#/.gitignore
 
 [color]
     ui = true
