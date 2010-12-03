@@ -3,3 +3,4 @@
 --type-set=spec=.spec
 --type-set=scss=.scss
 --type-add=python=.mako
+--type-set=ini=.ini
