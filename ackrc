@@ -2,5 +2,6 @@
 --type-set=mako=.mako
 --type-set=spec=.spec
 --type-set=scss=.scss
+--type-set=coffee=.coffee
 --type-add=python=.mako
 --type-set=ini=.ini
