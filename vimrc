@@ -61,4 +61,5 @@ if has("autocmd")
     autocmd FileType less set ts=2 sw=2
     autocmd FileType yaml set ts=2 sw=2
     autocmd FileType scss set ts=2 sw=2
+    autocmd FileType haml set ts=2 sw=2
 endif
