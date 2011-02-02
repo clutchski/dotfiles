@@ -5,3 +5,4 @@
 --type-set=coffee=.coffee
 --type-add=python=.mako
 --type-set=ini=.ini
+--type-set=ejs=.ejs
