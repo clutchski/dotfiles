@@ -13,6 +13,7 @@ export PATH=$PATH:~/bin
 # aliases
 #
 
+alias ..="cd .."
 alias ll="ls -lh"
 alias la="ll -a"
 alias du="du -h"
