@@ -1,5 +1,8 @@
 # vim: syn=sh 
 
+# load scripts
+source ~/.z.sh
+
 #
 # env variables
 #
@@ -27,6 +30,7 @@ psgrep() {
 vimglob () {
     vim `find . -name $*`
 }
+
 
 # ack
 which ack-grep &> /dev/null
