@@ -12,6 +12,7 @@ set undolevels=1000
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set wildmenu             " command line tab completion
 set tags=tags;/          " look up directory tree for tags file
+set directory=~/.vim/.tmp,~/tmp,/tmp
 
 cmap w!! w !sudo tee % >/dev/null
 abbrev RE <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'e **' : 'RE')<CR>
@@ -23,6 +24,9 @@ vnoremap <F1> <ESC>
 
 nnoremap j gj
 nnoremap k gk
+nmap ,z :tabprevious<cr>
+nmap ,x :tabnext<cr>
+nmap ,t :tabnew<cr>
 
 "
 " view
@@ -55,4 +59,5 @@ if has("autocmd")
     autocmd FileType yaml set ts=2 sw=2
     autocmd FileType scss set ts=2 sw=2
     autocmd FileType haml set ts=2 sw=2
+
 endif
