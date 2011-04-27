@@ -1,4 +1,3 @@
-
 "
 " behaviour
 "
@@ -13,6 +12,7 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set wildmenu             " command line tab completion
 set tags=tags;/          " look up directory tree for tags file
 set directory=~/.vim/.tmp,~/tmp,/tmp
+set mouse=a
 
 cmap w!! w !sudo tee % >/dev/null
 abbrev RE <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'e **' : 'RE')<CR>
