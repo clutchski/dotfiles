@@ -25,9 +25,9 @@ vnoremap <F1> <ESC>
 
 nnoremap j gj
 nnoremap k gk
-nmap ,z :tabprevious<cr>
-nmap ,x :tabnext<cr>
-nmap ,t :tabnew<cr>
+map <Leader>t :tabnew<cr>
+map <Leader>w :tabprevious<cr>
+map <Leader>e :tabnext<cr>
 
 "
 " view
