@@ -30,6 +30,10 @@ psgrep() {
 vimglob () {
     vim `find . -name $*`
 }
+gsd () {
+    sudo ~/bin/gsd.sh $*
+}
+
 
 
 # ack
