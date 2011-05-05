@@ -20,6 +20,7 @@ mkdir -p ~/.vim
 cp -r vim/* ~/.vim
 
 mkdir -p ~/bin
+cp -r bin/* ~/bin/
 
 # clean-up
 rm gitconfig
