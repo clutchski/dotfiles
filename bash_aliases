@@ -21,7 +21,6 @@ alias ll="ls -lh"
 alias la="ll -a"
 alias du="du -h"
 alias df="df -h"
-alias findname="find . -name "
 alias rmswp="find . -name \".*.sw*\" -exec rm {} \;"
 alias ip="ifconfig -a | grep \"inet\""
 psgrep() {
@@ -33,8 +32,15 @@ vimglob () {
 gsd () {
     sudo ~/bin/gsd.sh $*
 }
-
-
+# Search for a file by name.
+fn () {
+    dir="."
+    if [ -n $2 ]
+    then
+        dir=$2
+    fi
+    find $dir -name "*$1*"
+}
 
 # ack
 which ack-grep &> /dev/null
