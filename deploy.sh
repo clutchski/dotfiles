@@ -11,16 +11,16 @@ read email
 sed -e "s|#HOME#|$HOME|" -e "s|#NAME#|$name|" -e "s|#EMAIL#|$email|" gitconfig.template > gitconfig
 
 # deploy
-for f in screenrc vimrc bash_aliases ackrc gitconfig gitignore pythonrc z.sh gntrc gemrc tmux.conf
+for f in screenrc vimrc bash_aliases ackrc gitconfig gitignore pythonrc z.sh gntrc gemrc tmux.conf zshrc
 do
     cp $f ~/.${f}
 done
 
-mkdir -p ~/.vim
-cp -r vim/* ~/.vim
-
-mkdir -p ~/bin
-cp -r bin/* ~/bin/
+for d in vim bin oh-my-zsh
+do
+    mkdir -p ~/.${d}
+    cp -r ${d}/* ~/.${d}
+done
 
 # clean-up
 rm gitconfig
