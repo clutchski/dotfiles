@@ -10,6 +10,6 @@ except ImportError:
 else:
     import rlcompleter
     if 'darwin' in sys.platform:
-        readline.parse_and_bind ("bind ^I rl_complete")
+        readline.parse_and_bind("bind ^I rl_complete")
     else:
         readline.parse_and_bind("tab: complete")
