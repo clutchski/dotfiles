@@ -1,10 +1,15 @@
 # vim: syn=python
 # include tab completion in the python interpretor
 
+import sys
+
 try:
     import readline
 except ImportError:
     print "Module readline not available."
 else:
     import rlcompleter
-    readline.parse_and_bind("tab: complete")
+    if 'darwin' in sys.platform:
+        readline.parse_and_bind ("bind ^I rl_complete")
+    else:
+        readline.parse_and_bind("tab: complete")
