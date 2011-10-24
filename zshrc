@@ -16,7 +16,7 @@ export ZSH_THEME="clutchski"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse
-plugins=(git ruby osx python brew gem pip)
+plugins=(git ruby osx python brew gem pip extract)
 
 source $ZSH/oh-my-zsh.sh
 
