@@ -21,6 +21,6 @@ plugins=(git ruby osx python brew gem pip extract rvm)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-source ~/.exports.sh
-source ~/.aliases.sh
-source ~/.functions.sh
+. ~/.exports.sh
+. ~/.aliases.sh
+. ~/.functions.sh

@@ -1,5 +1,5 @@
 # vim: syn=sh 
 
-source ~/.exports.sh
-source ~/.aliases.sh
-source ~/.functions.sh
+. ~/.exports.sh
+. ~/.aliases.sh
+. ~/.functions.sh
