@@ -12,3 +12,13 @@ tgzdir () {
 psgrep() {
     ps aux | grep $* | grep -v grep
 }
+
+# Man or help.
+moh () {
+    cmd=$1
+    man $cmd
+    if [ $? -ne 0 ]
+    then
+        $cmd --help
+    fi
+}
