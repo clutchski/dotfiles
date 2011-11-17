@@ -1,0 +1,11 @@
+# tmux config for timber.
+
+project_name: timber
+project_root: ~/code/github/timber
+rvm: ruby-1.9.2-p290@timber
+tabs:
+  - build: rake build && guard
+  - code: vim src
+  - tests: vim tests
+  - test: rake test
+  - build: rake build && vim build/*.js
