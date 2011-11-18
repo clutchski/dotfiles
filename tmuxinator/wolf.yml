@@ -1,7 +1,7 @@
-# tmux config for timber.
+# tmux config for wolf.
 
-project_name: timber
-project_root: ~/code/github/timber
+project_name: wolf
+project_root: ~/code/github/wolf
 rvm: ruby-1.9.2-p290@timber
 tabs:
   - build: rake build && guard
