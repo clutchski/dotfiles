@@ -4,8 +4,8 @@ project_name: wolf
 project_root: ~/code/github/wolf
 rvm: ruby-1.9.2-p290@timber
 tabs:
-  - build: rake build && guard
+  - built: rake build && vim build/
+  - guard: rake build && guard
+  - rakefile: vim rakefile
   - code: vim src
   - tests: vim tests
-  - test: rake test
-  - build: rake build && vim build/*.js
