@@ -10,6 +10,7 @@
     df = diff
     lg = log -p
     up = "!gup() { git fetch $1 && git rebase -p $1 $2; }; gup"
+    stashes = stash list
 
 [core]
     whitespace = trailing-space,space-before-tab,cr-at-eol
