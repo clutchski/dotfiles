@@ -16,7 +16,6 @@ set directory=~/.vim/tmp    " directory to place swap files in
 set mouse=a
 
 cmap w!! w !sudo tee % >/dev/null
-abbrev RE <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'e **' : 'RE')<CR>
 
 nnoremap ; :
 inoremap <F1> <ESC>
