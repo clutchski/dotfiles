@@ -3,44 +3,53 @@
 "
 
 set backspace=indent,eol,start
-set history=1000         " remember more commands and search history
-set noerrorbells         " don't beep
+set history=1000            " remember more commands and search history
+set noerrorbells            " don't beep
 set pastetoggle=<F2>
 set undolevels=1000      
-set wildignore=*.swp,*.bak,*.pyc,*.class
-set wildmenu             " command line tab completion
-set tags=tags;/          " look up directory tree for tags file
+set wildmenu                " command line tab completion
+set tags=tags;/             " look up directory tree for tags file
 set backup                  " make backup files
 set backupdir=~/.vim/backup " where to put backup files
-set directory=~/.vim/tmp    " directory to place swap files in
-set mouse=a
+set directory=~/.vim/tmp    " directory to place swap files in 
+set mouse=a                 " Enable the mouse.
+set wildignore=*.swp,*.bak,*.pyc,*.class
 
-cmap w!! w !sudo tee % >/dev/null
+" Reopen with sudo.
+cmap w!! w !sudo tee % >/dev/nul
 
+" Disable the never used ex-mode.
+map Q <Nop>
+
+" An easier to use leader key.
 nnoremap ; :
+
+" Don't open gnome help when trying to hit escape.
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
 nnoremap j gj
 nnoremap k gk
+
+" Some tab shortcuts.
 map <Leader>t :tabnew<cr>
 map <Leader>w :tabprevious<cr>
 map <Leader>e :tabnext<cr>
 
+
 "
 " view
 "
-
 colorscheme peachpuff
 syntax on
 set ruler
 set number
 
+
 "
 " formatting
 "
-
 set expandtab
 set smarttab
 set autoindent
@@ -53,11 +62,10 @@ if has("autocmd")
     autocmd FileType python set ts=4 sw=4 et
     autocmd FileType ruby,eruby   set ts=2 sw=2
     autocmd FileType c,cpp  set ts=4 sw=4 cindent
-    autocmd FileType javascript  set ts=2 sw=2 cindent et
+    autocmd FileType javascript  set ts=4 sw=4 cindent et
     autocmd FileType docbk,html,xhtml,xml,css set ts=2 sw=2
     autocmd FileType less set ts=2 sw=2
     autocmd FileType yaml set ts=2 sw=2
     autocmd FileType scss set ts=2 sw=2
     autocmd FileType haml set ts=2 sw=2
-
 endif
