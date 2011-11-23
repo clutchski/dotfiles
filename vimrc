@@ -6,12 +6,12 @@ set backspace=indent,eol,start
 set history=1000            " remember more commands and search history
 set noerrorbells            " don't beep
 set pastetoggle=<F2>
-set undolevels=1000      
+set undolevels=1000
 set wildmenu                " command line tab completion
 set tags=tags;/             " look up directory tree for tags file
 set backup                  " make backup files
 set backupdir=~/.vim/backup " where to put backup files
-set directory=~/.vim/tmp    " directory to place swap files in 
+set directory=~/.vim/tmp    " directory to place swap files in
 set mouse=a                 " Enable the mouse.
 set wildignore=*.swp,*.bak,*.pyc,*.class
 
@@ -37,6 +37,21 @@ map <Leader>t :tabnew<cr>
 map <Leader>w :tabprevious<cr>
 map <Leader>e :tabnext<cr>
 
+" Strip trailing whitespace
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+" Strip trailing whitespace on save.
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 "
 " view
