@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ -z "$!" ]
+then
+    exit 1
+fi
+
+if [ ! -e "$1" ]
+then
+    touch "$1"
+fi
+
+open -W -a /Applications/WriteRoom.app/Contents/MacOS/WriteRoom "$1"
+
+if [ ! -s "$1" ]
+then
+    rm "$1"
+fi
