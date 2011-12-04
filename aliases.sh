@@ -17,3 +17,7 @@ alias ackjs="ack --js"
 alias ackpy="ack --python"
 alias ackrb="ack --ruby"
 alias ackcoffee="ack --coffee"
+
+# Common directories
+alias code="cd ~/code"
+alias notes="cd ~/Dropbox/notes"
