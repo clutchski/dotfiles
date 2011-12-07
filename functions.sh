@@ -22,3 +22,8 @@ moh () {
         $cmd --help
     fi
 }
+
+# Delete file contents.
+devnull () {
+    cat /dev/null > $1
+}
