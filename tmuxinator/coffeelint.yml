@@ -1,0 +1,6 @@
+project_name: coffeelint
+project_root: ~/code/github/coffeelint
+tabs:
+  - watch: cake watch
+  - test: cake test
+  - code: vim src/coffeelint.coffee
