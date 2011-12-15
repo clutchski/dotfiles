@@ -14,6 +14,7 @@ set backupdir=~/.vim/backup " where to put backup files
 set directory=~/.vim/tmp    " directory to place swap files in
 set mouse=a                 " Enable the mouse.
 set wildignore=*.swp,*.bak,*.pyc,*.class
+set modelines=5
 
 " Reopen with sudo.
 cmap w!! w !sudo tee % >/dev/nul
