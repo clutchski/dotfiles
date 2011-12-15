@@ -27,3 +27,8 @@ moh () {
 devnull () {
     cat /dev/null > $1
 }
+
+# Create an executable file.
+exe () {
+    touch $1 && chmod a+x $1
+}
