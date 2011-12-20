@@ -84,4 +84,6 @@ if has("autocmd")
     autocmd FileType yaml set ts=2 sw=2
     autocmd FileType scss set ts=2 sw=2
     autocmd FileType haml set ts=2 sw=2
+    autocmd FileType haml set ts=2 sw=2
+    autocmd FileType make set noexpandtab ts=8 sw=8
 endif
