@@ -24,3 +24,9 @@ source $ZSH/oh-my-zsh.sh
 . ~/.exports.sh
 . ~/.aliases.sh
 . ~/.functions.sh
+
+# custom zsh config
+
+setopt no_prompt_cr
+unsetopt correct_all
+DISABLE_AUTO_TITLE=true
