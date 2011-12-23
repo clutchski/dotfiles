@@ -7,3 +7,4 @@
 --type-set=ini=.ini
 --type-set=ejs=.ejs
 --type-set=txt=.txt
+--type-set=jade=.jade
