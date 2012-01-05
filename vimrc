@@ -17,7 +17,7 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set modelines=5
 
 " Reopen with sudo.
-cmap w!! w !sudo tee % >/dev/nul
+cmap w!! w !sudo tee % >/dev/null
 
 " Disable the never used ex-mode.
 map Q <Nop>
