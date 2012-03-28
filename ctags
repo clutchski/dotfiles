@@ -1,0 +1,5 @@
+--python-kinds=-i
+
+--exclude=*.egg*
+--exclude=build/*
+--exclude=node_modules
