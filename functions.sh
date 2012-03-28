@@ -32,3 +32,9 @@ devnull () {
 exe () {
     touch $1 && chmod a+x $1
 }
+
+# Tag the current directory.
+tag () {
+    ctags -R -o tags .
+
+}
