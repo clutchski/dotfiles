@@ -1,6 +1,7 @@
 # Remove vim swp files
 rmswp () {
-    rm -f ~/.vim/*.sw*
+    rm -f ~/.vim/tmp/*.sw*
+    find . -name "*.sw*" -exec rm {} \;
 }
 
 # Tar a directory
