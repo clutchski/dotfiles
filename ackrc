@@ -8,3 +8,5 @@
 --type-set=ejs=.ejs
 --type-set=txt=.txt
 --type-set=jade=.jade
+
+--ignore-dir=build
