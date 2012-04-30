@@ -1,23 +1,21 @@
+"=============
+" Behaviour
+"=============
 
-"
+
 " Set-up pathogen.
-"
 
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 
-
-"
-" behaviour
-"
-
+" Options.
 set backspace=indent,eol,start
 set history=1000            " remember more commands and search history
 set noerrorbells            " don't beep
 set pastetoggle=<F2>
 set undolevels=1000
-set wildmenu                " command line tab completion
+set wIldmenu                " command line tab completion
 set tags=tags;/             " look up directory tree for tags file
 set backup                  " make backup files
 set backupdir=~/.vim/backup " where to put backup files
@@ -64,18 +62,24 @@ endfunction
 " Strip trailing whitespace on save.
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-"
-" view
-"
+" Ack integration. Uncomment on ubuntu.
+" let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
+
+"================
+" View
+"================
+
 colorscheme peachpuff
 syntax on
 set ruler
 set number
 
 
-"
+
+"====================
 " formatting
-"
+"====================
 set expandtab
 set smarttab
 set autoindent
