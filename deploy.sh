@@ -14,9 +14,9 @@ do
 
     if [ -d $f ]; then
         mkdir -p ~/.${f}
-        cp -r ${f}/* ~/.${f}
+        cp -f -r ${f}/* ~/.${f}
     else
-        cp $f ~/.${f}
+        cp -f $f ~/.${f}
     fi
 done
 

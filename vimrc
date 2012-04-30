@@ -15,7 +15,7 @@ set history=1000            " remember more commands and search history
 set noerrorbells            " don't beep
 set pastetoggle=<F2>
 set undolevels=1000
-set wIldmenu                " command line tab completion
+set wildmenu                " command line tab completion
 set tags=tags;/             " look up directory tree for tags file
 set backup                  " make backup files
 set backupdir=~/.vim/backup " where to put backup files
