@@ -1,3 +1,6 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = git@github.com:clutchski/oh-my-zsh.git
+[submodule "vim/bunbdle/ctrlp"]
+	path = vim/bunbdle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
