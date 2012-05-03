@@ -8,5 +8,6 @@
 --type-set=ejs=.ejs
 --type-set=txt=.txt
 --type-set=jade=.jade
+--type-set=handlebars=.handlebars
 
 --ignore-dir=build
