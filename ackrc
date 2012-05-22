@@ -9,5 +9,6 @@
 --type-set=txt=.txt
 --type-set=jade=.jade
 --type-set=handlebars=.handlebars
+--type-set=less=.less
 
 --ignore-dir=build
