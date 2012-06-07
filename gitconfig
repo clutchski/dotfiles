@@ -9,7 +9,7 @@
     co = checkout
     df = diff
     lg = log -p
-    up = "!gup() { git fetch $1 && git rebase -p $1 $2; }; gup"
+    up = "!gup() { git fetch origin && git rebase -p origin ${current_branch}; }; gup"
     stashes = stash list
     unstage = reset HEAD
 
