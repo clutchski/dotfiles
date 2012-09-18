@@ -21,7 +21,7 @@ set backup                  " make backup files
 set backupdir=~/.vim/backup " where to put backup files
 set directory=~/.vim/tmp    " directory to place swap files in
 set mouse=a                 " Enable the mouse.
-set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildignore=*.sw*,*.bak,*.pyc,*.class,*.mako.py
 set modelines=5
 
 " Reopen with sudo.
@@ -60,7 +60,7 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 
 " Strip trailing whitespace on save.
-autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+" autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Ack integration. Uncomment on ubuntu.
 " let g:ackprg="ack-grep -H --nocolor --nogroup --column"
