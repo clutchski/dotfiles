@@ -49,3 +49,8 @@ pydir ()  {
 pycd ()  {
     cd `pydir $1`
 }
+
+# Search for a file by name.
+name () {
+    find . -name $*
+}
