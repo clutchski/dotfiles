@@ -26,3 +26,6 @@ alias ackcoffee="ack --coffee"
 # Common directories
 alias code="cd ~/code"
 alias notes="cd ~/Dropbox/notes"
+
+# Use hub if we can.
+alias_if_exists "hub" "git"
