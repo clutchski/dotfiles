@@ -12,6 +12,7 @@
     up = "!gup() { git fetch origin && git rebase -p origin ${current_branch}; }; gup"
     stashes = stash list
     unstage = reset HEAD
+    showstash = stash show -p
 
 [core]
     whitespace = trailing-space,space-before-tab,cr-at-eol
