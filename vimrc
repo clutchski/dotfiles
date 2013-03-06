@@ -4,7 +4,6 @@
 
 
 " Set-up pathogen.
-
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
@@ -75,7 +74,7 @@ syntax on
 set ruler
 set number
 
-
+highlight clear SignColumn " disable the coloring in vim-gitgutter
 
 "====================
 " formatting

@@ -21,6 +21,12 @@ do
 done
 
 #
+#  create our vim directories
+# 
+
+mkdir -p ~/.vim/backup ~/.vim/tmp
+
+#
 # update git config
 #
 
