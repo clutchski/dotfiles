@@ -10,5 +10,6 @@
 --type-set=jade=.jade
 --type-set=handlebars=.handlebars
 --type-set=less=.less
+--type-set=cython=.pyx
 
 --ignore-dir=build
