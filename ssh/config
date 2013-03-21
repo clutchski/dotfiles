@@ -1,0 +1,7 @@
+Host stg
+  HostName kerberos.datad0g.com
+  User topdog
+
+Host prod
+  HostName kerberos.datadoghq.com
+  User topdog
