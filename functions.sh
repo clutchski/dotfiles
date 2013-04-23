@@ -54,3 +54,7 @@ pycd ()  {
 name () {
     find . -name $*
 }
+
+sumlines () {
+    awk '{s+=$1} END {print s}'
+}
