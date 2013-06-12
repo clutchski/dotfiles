@@ -11,5 +11,6 @@
 --type-set=handlebars=.handlebars
 --type-set=less=.less
 --type-set=cython=.pyx
+--type-set=markdown=.md
 
 --ignore-dir=build
