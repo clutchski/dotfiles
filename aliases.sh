@@ -22,6 +22,8 @@ alias ackjs="ack --js"
 alias ackpy="ack --python"
 alias ackrb="ack --ruby"
 alias ackcoffee="ack --coffee"
+alias ackc="ack --cc"
+alias ackpyx="ack --cython"
 
 # Common directories
 alias code="cd ~/code"
