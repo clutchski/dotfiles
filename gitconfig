@@ -3,19 +3,19 @@
     email = matthewperpick@gmail.com
 
 [alias]
-    st = status
+    st = status -s
     ci = commit
     br = branch
     co = checkout
     df = diff
     lg = log -p
-    filelog = log -u
-    up = "!gup() { git fetch origin && git rebase -p origin ${current_branch}; }; gup"
     stashes = stash list
     unstage = reset HEAD
-    showstash = show stash -p
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    f = "!git ls-files | grep -i"
+    up = "!gup() { git fetch origin && git rebase -p origin ${current_branch}; }; gup"
+    destroy =  "!gd() { git branch -d $1 && git push origin :$1; }; gd"
 
 [core]
     whitespace = trailing-space,space-before-tab,cr-at-eol
