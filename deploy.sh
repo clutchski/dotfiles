@@ -36,3 +36,9 @@ if [[ -n $1  &&  -n $2 ]] ; then
     git config --global user.name "$1"
     git config --global user.email "$2"
 fi
+
+if [ ! -d ~/.vim/bundle/vundle ]; then
+    echo "Cloning vundle"
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+fi
+vim +BundleInstall +qall

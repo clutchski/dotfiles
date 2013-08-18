@@ -1,12 +1,29 @@
+"============
+" Vundule
+"============
+
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+ " let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+Bundle 'kien/ctrlp.vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'vim-scripts/SearchComplete'
+Bundle 'scrooloose/nerdtree'
+Bundle 'msanders/snipmate.vim'
+Bundle 'kchmck/vim-coffee-script'
+
+
+filetype plugin indent on
+
 "=============
 " Behaviour
 "=============
-
-
-" Set-up pathogen.
-runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
 
 " Options.
 set backspace=indent,eol,start
@@ -63,7 +80,6 @@ endfunction
 
 " Ack integration. Uncomment on ubuntu.
 " let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-
 
 "================
 " View
