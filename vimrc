@@ -17,7 +17,11 @@ Bundle 'vim-scripts/SearchComplete'
 Bundle 'scrooloose/nerdtree'
 Bundle 'msanders/snipmate.vim'
 Bundle 'kchmck/vim-coffee-script'
-
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-fugitive'
+Bundle 'bling/vim-bufferline'
+Bundle 'bufexplorer.zip'
+Bundle 'jnwhiteh/vim-golang'
 
 filetype plugin indent on
 
@@ -37,7 +41,7 @@ set backup                  " make backup files
 set backupdir=~/.vim/backup " where to put backup files
 set directory=~/.vim/tmp    " directory to place swap files in
 set mouse=a                 " Enable the mouse.
-set wildignore=*.sw*,*.bak,*.pyc,*.class,*.mako.py,*.o,*.egg
+set wildignore=*.sw*,*.bak,*.pyc,*.class,*.mako.py,*.o,*.egg,*.a
 set modelines=5
 
 " Reopen with sudo.
