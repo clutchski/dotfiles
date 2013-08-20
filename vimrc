@@ -22,6 +22,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-bufferline'
 Bundle 'bufexplorer.zip'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'mhinz/vim-startify'
 
 filetype plugin indent on
 
