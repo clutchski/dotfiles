@@ -26,6 +26,7 @@ Bundle 'mhinz/vim-startify'
 
 " configure nerd tree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeIgnore = ['\.pyc$']
 
 filetype plugin indent on
 
