@@ -1,20 +1,20 @@
 "============
-" Vundule
+" Plugins
 "============
 
+" Set up vundle
 set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
- " let Vundle manage Vundle
+" install the plugins
 Bundle 'gmarik/vundle'
-
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
-Bundle 'vim-scripts/SearchComplete'
 Bundle 'scrooloose/nerdtree'
+Bundle 'vim-scripts/SearchComplete'
 Bundle 'msanders/snipmate.vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-markdown'
@@ -23,6 +23,9 @@ Bundle 'bling/vim-bufferline'
 Bundle 'bufexplorer.zip'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'mhinz/vim-startify'
+
+" configure nerd tree
+map <C-n> :NERDTreeToggle<CR>
 
 filetype plugin indent on
 
@@ -94,8 +97,6 @@ colorscheme peachpuff
 syntax on
 set ruler
 set number
-
-highlight clear SignColumn " disable the coloring in vim-gitgutter
 
 "====================
 " formatting
