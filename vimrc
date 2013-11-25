@@ -28,6 +28,13 @@ Bundle 'mhinz/vim-startify'
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$']
 
+" configure startify
+let g:startify_skiplist = [
+       \ '.*\.so',
+       \ '.*\.rdb',
+       \ '.*/\.git/*'
+       \ ]
+
 filetype plugin indent on
 
 "=============
