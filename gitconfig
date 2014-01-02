@@ -16,6 +16,7 @@
     f = "!git ls-files | grep -i"
     up = "!gup() { git fetch origin && git rebase -p origin ${current_branch}; }; gup"
     destroy =  "!gd() { git branch -d $1 && git push origin :$1; }; gd"
+    git diff --name-only --diff-filter=U
 
 [core]
     whitespace = trailing-space,space-before-tab,cr-at-eol
