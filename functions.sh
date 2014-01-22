@@ -41,13 +41,8 @@ tag () {
 }
 
 # Print the directory of a Python module.
-pydir ()  {
-    python -c "import $1,os; print os.path.dirname($1.__file__)"
-}
-
-# Change to the directory of a Python module.
-pycd ()  {
-    cd `pydir $1`
+pymod ()  {
+    python -c "import $1,os; print $1.__file__"
 }
 
 # Search for a file by name.
