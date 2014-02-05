@@ -2,10 +2,13 @@
 
 set -e
 
-#
-# deploy
-#
+# First install oh-my-zsh
+if [ ! -d ~/.oh-my-zsh ]; then
+    echo "Cloning oh-myzsh"
+    git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+fi
 
+# Deploy each app config file.
 for f in `ls . `
 do
     if [[ $f == "README" ]] || [[ $f == "deploy.sh" ]] ; then
@@ -20,25 +23,20 @@ do
     fi
 done
 
-#
-#  create our vim directories
-# 
-
+# Setup vim.
 mkdir -p ~/.vim/backup ~/.vim/tmp
-
-#
-# update git config
-#
-
-git config --global core.excludesfile ~/.gitignore
-
-if [[ -n $1  &&  -n $2 ]] ; then
-    git config --global user.name "$1"
-    git config --global user.email "$2"
-fi
-
 if [ ! -d ~/.vim/bundle/vundle ]; then
     echo "Cloning vundle"
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi
 vim +BundleInstall +qall
+
+# Set up git.
+git config --global core.excludesfile ~/.gitignore
+if [[ -n $1  &&  -n $2 ]] ; then
+    git config --global user.name "$1"
+    git config --global user.email "$2"
+fi
+
+
+
