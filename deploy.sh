@@ -11,7 +11,7 @@ fi
 # Deploy each app config file.
 for f in `ls . `
 do
-    if [[ $f == "README" ]] || [[ $f == "deploy.sh" ]] ; then
+    if [[ $f == "README.md" ]] || [[ $f == "deploy.sh" ]] ; then
         continue
     fi
 
