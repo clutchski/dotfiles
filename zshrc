@@ -12,8 +12,7 @@ export ZSH_THEME="clutchski"
 export DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse
-plugins=(git ruby osx python brew gem pip extract rvm wd)
+plugins=(git gitfast redis-cli ruby osx supervisor python gem pip extract rvm wd)
 
 source $ZSH/oh-my-zsh.sh
 
