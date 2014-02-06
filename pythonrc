@@ -28,7 +28,10 @@ def save_history(history_path=history_path):
     readline.write_history_file(history_path)
 
 if os.path.exists(history_path):
-    readline.read_history_file(history_path)
+    try:
+        readline.read_history_file(history_path)
+    except IOError:
+        pass
 
 atexit.register(save_history)
 
