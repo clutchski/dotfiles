@@ -24,4 +24,5 @@ source $ZSH/oh-my-zsh.sh
 # custom zsh config
 setopt no_prompt_cr
 unsetopt correct_all
+unsetopt auto_name_dirs
 DISABLE_AUTO_TITLE=true
