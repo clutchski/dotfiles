@@ -12,5 +12,6 @@
 --type-set=less=.less
 --type-set=cython=.pyx
 --type-set=markdown=.md
+--type-set=conf=.conf
 
 --ignore-dir=build
