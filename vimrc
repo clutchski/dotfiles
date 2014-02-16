@@ -23,6 +23,7 @@ Bundle 'bling/vim-bufferline'
 Bundle 'bufexplorer.zip'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'mhinz/vim-startify'
+Bundle 'ntpeters/vim-better-whitespace'
 
 " configure nerd tree
 map <C-n> :NERDTreeToggle<CR>
@@ -77,22 +78,6 @@ nnoremap k gk
 map <Leader>t :tabnew<cr>
 map <Leader>w :tabprevious<cr>
 map <Leader>e :tabnext<cr>
-
-" Strip trailing whitespace
-function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
-endfunction
-
-" Strip trailing whitespace on save.
-" autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " Ack integration. Uncomment on ubuntu.
 " let g:ackprg="ack-grep -H --nocolor --nogroup --column"
