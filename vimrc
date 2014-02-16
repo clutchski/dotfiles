@@ -24,6 +24,7 @@ Bundle 'bufexplorer.zip'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'mhinz/vim-startify'
 Bundle 'ntpeters/vim-better-whitespace'
+Bundle 'tpope/vim-vinegar'
 
 " configure nerd tree
 map <C-n> :NERDTreeToggle<CR>
