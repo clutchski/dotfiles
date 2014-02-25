@@ -13,8 +13,8 @@
     unstage = reset HEAD
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    tree = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
     f = "!git ls-files | grep -i"
-    up = "!gup() { git fetch origin && git rebase -p origin ${current_branch}; }; gup"
     destroy =  "!gd() { git branch -d $1 && git push origin :$1; }; gd"
     conflicts = diff --name-only --diff-filter=U
 
