@@ -45,6 +45,18 @@ pymod ()  {
     python -c "import $1,os; print $1.__file__"
 }
 
+pyprofile() {
+    prof=$1
+    shift 1
+    python -m cProfile -o $prof $*
+    echo "wrote profile to $prof"
+}
+
+pystats() {
+    python -m pstats $*
+}
+
+
 # Search for a file by name.
 name () {
     find . -name $*
