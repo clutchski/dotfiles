@@ -13,7 +13,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
-Bundle 'scrooloose/nerdtree'
 Bundle 'vim-scripts/SearchComplete'
 Bundle 'msanders/snipmate.vim'
 Bundle 'kchmck/vim-coffee-script'
