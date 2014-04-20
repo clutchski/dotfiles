@@ -25,10 +25,6 @@ Bundle 'mhinz/vim-startify'
 Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'tpope/vim-vinegar'
 
-" configure nerd tree
-map <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore = ['\.pyc$']
-
 " configure startify
 let g:startify_skiplist = [
        \ '.*\.so',
