@@ -20,10 +20,10 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-bufferline'
 Bundle 'bufexplorer.zip'
-Bundle 'jnwhiteh/vim-golang'
 Bundle 'mhinz/vim-startify'
 Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'tpope/vim-vinegar'
+Bundle 'fatih/vim-go'
 
 " configure startify
 let g:startify_skiplist = [
