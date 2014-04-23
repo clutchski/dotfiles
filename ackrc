@@ -13,5 +13,6 @@
 --type-set=cython=.pyx
 --type-set=markdown=.md
 --type-set=conf=.conf
+--type-set=go=.go
 
 --ignore-dir=build

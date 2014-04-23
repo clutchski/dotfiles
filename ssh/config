@@ -1,7 +1,7 @@
 Host stg
   HostName kerberos.datad0g.com
-  User topdog
+  User mattp
 
 Host prod
   HostName kerberos.datadoghq.com
-  User topdog
+  User mattp
