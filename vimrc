@@ -32,6 +32,9 @@ let g:startify_skiplist = [
        \ '.*/\.git/*'
        \ ]
 
+" Don't try to autoinstall go by default
+let g:go_disable_autoinstall = 1
+
 filetype plugin indent on
 
 "=============
