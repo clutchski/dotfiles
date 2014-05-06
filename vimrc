@@ -11,19 +11,21 @@ call vundle#rc()
 
 " install the plugins
 Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'vim-scripts/SearchComplete'
-Bundle 'msanders/snipmate.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-fugitive'
+
 Bundle 'bling/vim-bufferline'
 Bundle 'bufexplorer.zip'
-Bundle 'mhinz/vim-startify'
-Bundle 'ntpeters/vim-better-whitespace'
-Bundle 'tpope/vim-vinegar'
 Bundle 'fatih/vim-go'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
+Bundle 'mhinz/vim-startify'
+Bundle 'mileszs/ack.vim'
+Bundle 'msanders/snipmate.vim'
+Bundle 'ntpeters/vim-better-whitespace'
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimfiler.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
+Bundle 'vim-scripts/SearchComplete'
 
 " configure startify
 let g:startify_skiplist = [
@@ -34,6 +36,9 @@ let g:startify_skiplist = [
 
 " Don't try to autoinstall go by default
 let g:go_disable_autoinstall = 1
+
+" Run vimfiler.
+let g:vimfiler_as_default_explorer = 1
 
 filetype plugin indent on
 
