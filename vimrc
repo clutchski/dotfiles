@@ -19,7 +19,6 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mhinz/vim-startify'
 Bundle 'mileszs/ack.vim'
-Bundle 'msanders/snipmate.vim'
 Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimfiler.vim'
@@ -36,6 +35,7 @@ let g:startify_skiplist = [
 
 " Don't try to autoinstall go by default
 let g:go_disable_autoinstall = 1
+let g:go_auto_type_info = 0
 
 " Run vimfiler.
 let g:vimfiler_as_default_explorer = 1
@@ -78,10 +78,8 @@ vnoremap <F1> <ESC>
 nnoremap j gj
 nnoremap k gk
 
-" Some tab shortcuts.
-map <Leader>t :tabnew<cr>
-map <Leader>w :tabprevious<cr>
-map <Leader>e :tabnext<cr>
+map - :Explore<cr>
+set pastetoggle=<F2>
 
 " Ack integration. Uncomment on ubuntu.
 " let g:ackprg="ack-grep -H --nocolor --nogroup --column"
