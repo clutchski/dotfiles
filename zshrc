@@ -20,6 +20,7 @@ source $ZSH/oh-my-zsh.sh
 . ~/.exports.sh
 . ~/.aliases.sh
 . ~/.functions.sh
+. ~/.environments.sh
 
 # custom zsh config
 setopt no_prompt_cr
