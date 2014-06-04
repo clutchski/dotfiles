@@ -13,4 +13,5 @@ then
     # path
     export PATH=$PATH:~/code/datadog/dogweb/node_modules/.bin/:~/python/bin:/usr/local/go/bin/:$GOBIN
 
+    alias super="sudo supervisorctl"
 fi
