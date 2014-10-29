@@ -2,7 +2,7 @@
 if [ -e ~/.clutchski/datadog ]
 then
 
-    source ~/python/bin/activate
+    source ~/dogweb/python/bin/activate
     export DOGWEB_DEFAULT_CONFIG_PATH=~/code/datadog/dogweb/development.ini
 
     # go env
