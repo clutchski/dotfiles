@@ -26,6 +26,9 @@ alias ackc="ack --cc"
 alias ackpyx="ack --cython"
 alias ackgo="ack --go"
 
+alias agpy="ag --python"
+alias agjs="ag --js"
+
 # Common directories
 alias code="cd ~/code"
 alias notes="cd ~/Dropbox/notes"
