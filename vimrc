@@ -23,6 +23,7 @@ Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/SearchComplete'
+Bundle 'cstrahan/vim-capnp'
 
 " configure startify
 let g:startify_skiplist = [
@@ -59,13 +60,17 @@ set mouse=a                 " Enable the mouse.
 set wildignore=*.sw*,*.bak,*.pyc,*.class,*.mako.py,*.o,*.egg,*.a
 set modelines=5
 
+" clean up netrw config
+let g:netrw_liststyle=3
+let g:netrw_banner=0
+let g:netrw_list_hide='^\(\..\{-}\.sw.\|.\{-}\.pyc\)$' " FIXME: use wildignore??
+
 " Reopen with sudo.
 cmap w!! w !sudo tee % >/dev/null
 
 " Disable the never used ex-mode.
 map Q <Nop>
 
-" An easier to use leader key.
 nnoremap ; :
 
 " Don't open gnome help when trying to hit escape.
@@ -81,6 +86,7 @@ set pastetoggle=<F2>
 
 " Ack integration. Uncomment on ubuntu.
 " let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+"
 
 "================
 " View
