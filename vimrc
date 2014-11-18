@@ -61,6 +61,7 @@ set wildignore=*.sw*,*.bak,*.pyc,*.class,*.mako.py,*.o,*.egg,*.a
 set modelines=5
 
 " clean up netrw config
+let g:netrw_browse_split=0
 let g:netrw_liststyle=3
 let g:netrw_banner=0
 let g:netrw_list_hide='^\(\..\{-}\.sw.\|.\{-}\.pyc\)$' " FIXME: use wildignore??
