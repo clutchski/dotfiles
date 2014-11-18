@@ -4,6 +4,7 @@
 
 [alias]
     st = status -s
+    sti = status -s --ignored
     ci = commit
     br = branch
     co = checkout
