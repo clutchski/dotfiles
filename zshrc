@@ -23,7 +23,7 @@ source $ZSH/oh-my-zsh.sh
 . ~/.environments.sh
 
 # custom zsh config
+DISABLE_AUTO_TITLE=true
+setopt auto_name_dirs
 setopt no_prompt_cr
 unsetopt correct_all
-unsetopt auto_name_dirs
-DISABLE_AUTO_TITLE=true
