@@ -16,14 +16,14 @@ plugins=(git gitfast redis-cli ruby osx supervisor python gem pip extract rvm wd
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-. ~/.exports.sh
-. ~/.aliases.sh
-. ~/.functions.sh
-. ~/.environments.sh
-
 # custom zsh config
 DISABLE_AUTO_TITLE=true
 setopt auto_name_dirs
 setopt no_prompt_cr
 unsetopt correct_all
+
+# Customize to your needs...
+. ~/.exports.sh
+. ~/.aliases.sh
+. ~/.functions.sh
+. ~/.environments.sh
