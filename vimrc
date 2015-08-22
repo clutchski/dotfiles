@@ -39,6 +39,7 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_mruf_relative = 0
+let g:ctrlp_reuse_window  = 'startify'
 
 
 "=============
