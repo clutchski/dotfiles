@@ -15,7 +15,7 @@ Bundle 'gmarik/vundle'
 Bundle 'bling/vim-bufferline'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'fatih/vim-go'
-Bundle 'kien/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'mhinz/vim-startify'
 Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'tpope/vim-fugitive'
@@ -38,8 +38,8 @@ let g:go_auto_type_info = 0
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:ctrlp_open_new_file = 'r'
-let g:ctrlp_mruf_relative = 0
-let g:ctrlp_reuse_window  = 'startify'
+let g:ctrlp_mruf_relative = 1
+let g:ctrlp_reuse_window  = 'startify\|netrw'
 
 
 "=============
