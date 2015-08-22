@@ -75,6 +75,9 @@ map Q <Nop>
 
 nnoremap ; :
 
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+
 " Don't open gnome help when trying to hit escape.
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
