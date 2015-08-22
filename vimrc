@@ -15,15 +15,13 @@ Bundle 'gmarik/vundle'
 Bundle 'bling/vim-bufferline'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'fatih/vim-go'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mhinz/vim-startify'
-Bundle 'mileszs/ack.vim'
 Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/SearchComplete'
-Bundle 'cstrahan/vim-capnp'
+
+filetype plugin indent on
 
 " configure startify
 let g:startify_skiplist = [
@@ -36,10 +34,12 @@ let g:startify_skiplist = [
 let g:go_disable_autoinstall = 1
 let g:go_auto_type_info = 0
 
-" Run vimfiler.
-let g:vimfiler_as_default_explorer = 1
+" ctrlp config
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_open_new_file = 'r'
+let g:ctrlp_mruf_relative = 0
 
-filetype plugin indent on
 
 "=============
 " Behaviour
