@@ -13,11 +13,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'bling/vim-bufferline'
-Bundle 'jlanzarotta/bufexplorer'
-Bundle 'fatih/vim-go'
 Bundle 'ctrlpvim/ctrlp.vim'
+Bundle 'fatih/vim-go'
+Bundle 'jlanzarotta/bufexplorer'
 Bundle 'mhinz/vim-startify'
 Bundle 'ntpeters/vim-better-whitespace'
+Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/SearchComplete'
 
