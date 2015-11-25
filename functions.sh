@@ -42,7 +42,8 @@ tag () {
 
 # Print the directory of a Python module.
 pymod ()  {
-    python -c "import $1,os; print $1.__file__"
+    # FIXME: could replace in the middle of a path
+    python -c "import $1; print $1.__file__.replace('.pyc', '.py')"
 }
 
 pyprofile() {
