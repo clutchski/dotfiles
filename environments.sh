@@ -11,6 +11,8 @@ then
     export DDGO=$GOPATH/src/github.com/DataDog/
     export DD=~/code/datadog/
     export DOGWEB=~/code/datadog/dogweb/
+    export DDJS=~/code/datadog/dogweb/dogweb/javascript/
+    export DDJSX=~/code/datadog/dogweb/dogweb/javascript/datadog/react
 
     # path
     export PATH=$PATH:~/code/datadog/dogweb/node_modules/.bin/:~/python/bin:/usr/local/go/bin/:$GOBIN
