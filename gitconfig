@@ -3,6 +3,7 @@
     email = matthewperpick@gmail.com
 
 [alias]
+    # shorthands
     st = status -s
     sti = status -s --ignored
     ci = commit
@@ -13,15 +14,25 @@
     lg = log -p
     stashes = stash list
     unstage = reset HEAD
+
+    # pretty print history
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     tree = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
     f = "!git ls-files | grep -i"
+
+    # destroy a branch locally and remote
     destroy =  "!gd() { git branch -d $1 && git push origin :$1; }; gd"
+
+    # print paths of conflicting files
     conflicts = diff --name-only --diff-filter=U
+
+    # hard reset to origin's current branch state
+    hro = "!githro() { git reset --hard origin/$(git rev-parse --abbrev-ref HEAD); }; githro"
 
 [core]
     whitespace = trailing-space,space-before-tab,cr-at-eol
+	excludesfile = /home/vagrant/.gitignore
 
 [color]
     ui = true
