@@ -1,0 +1,5 @@
+dogweb:~/code/datadog/dogweb
+jsx:~/code/datadog/dogweb/dogweb/javascript/datadog/react
+js:~/code/datadog/dogweb/dogweb/javascript/datadog
+devops:~/code/datadog/devops
+go:~/code/datadog/go/src/github.com/DataDog/dd-go
