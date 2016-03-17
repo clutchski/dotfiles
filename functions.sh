@@ -66,3 +66,7 @@ name () {
 sumlines () {
     awk '{s+=$1} END {print s}'
 }
+
+epoch() {
+    date +%s
+}

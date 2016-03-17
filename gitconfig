@@ -14,6 +14,7 @@
     lg = log -p
     stashes = stash list
     unstage = reset HEAD
+    dl = "!dl() { git fetch -pq && git pull;}; dl"
 
     # pretty print history
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
