@@ -2,8 +2,9 @@
 if [ -e ~/.clutchski/datadog ]
 then
 
-    source ~/dogweb/python/bin/activate
-    export DOGWEB_DEFAULT_CONFIG_PATH=~/code/datadog/dogweb/development.ini
+    # python env
+    source ~/python/bin/activate
+    export DOGWEB_DEFAULT_CONFIG_PATH=~/etc/datadog/development.ini
 
     # go env
     export GOPATH=~/code/datadog/go
@@ -18,4 +19,6 @@ then
     export PATH=$PATH:~/code/datadog/dogweb/node_modules/.bin/:~/python/bin:/usr/local/go/bin/:$GOBIN
 
     alias super="sudo supervisorctl"
+    alias vm="cd code/datadog/vm2 && vagrant ssh"
 fi
+
