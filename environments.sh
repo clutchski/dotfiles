@@ -2,6 +2,9 @@
 if [ -e ~/.clutchski/datadog ]
 then
 
+    mkdir -p ~/code
+    ln -s /home/vagrant/ /home/vagrant/code/datadog || true
+
     # python env
     source ~/python/bin/activate
     export DOGWEB_DEFAULT_CONFIG_PATH=~/etc/datadog/development.ini
