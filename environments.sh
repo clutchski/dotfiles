@@ -19,7 +19,7 @@ then
     export DDJSX=~/code/datadog/dogweb/dogweb/javascript/datadog/react
 
     # path
-    export PATH=$PATH:~/code/datadog/dogweb/node_modules/.bin/:~/python/bin:/usr/local/go/bin/:$GOBIN
+    export PATH=$PATH:~/code/datadog/dogweb/node_modules/.bin/:~/python/bin:/usr/local/go/bin/:$GOBIN:~/usr/bin
 
     alias super="sudo supervisorctl"
     alias vm="cd code/datadog/vm2 && vagrant ssh"
