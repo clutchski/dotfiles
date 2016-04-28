@@ -8,6 +8,8 @@ then
     source ~/python/bin/activate
     source ~/.profile
 
+    eval "$(gimme 1.4.2)"
+
     # go env
     export GOPATH=~/code/datadog/go
     export GOBIN=$GOPATH/bin
