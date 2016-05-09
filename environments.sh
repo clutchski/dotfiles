@@ -36,4 +36,5 @@ fi
 if [ -e ~/.clutchski/work ]
 then
     alias vm="cd ~/code/datadog/vms/2016-04-27 && vagrant ssh"
+    alias up="cd ~/code/datadog/vms/2016-04-27 && vagrant up"
 fi
