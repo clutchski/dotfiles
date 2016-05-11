@@ -1,19 +1,17 @@
-Host stg
-  HostName jumpbox.datad0g.com
-  User mattp
-  ForwardAgent yes
+Host staging
+    Hostname jumpbox.datad0g.com
+    ForwardAgent yes
+    User mattp
+
+Host i-*.staging
+    ProxyCommand ssh -q staging nc -q0 $(basename %h .staging).node.consul %p
+    User mattp
 
 Host prod
-  HostName jumpbox.datadoghq.com
-  User mattp
-  ForwardAgent yes
+    Hostname jumpbox.datadoghq.com
+    ForwardAgent yes
+    User mattp
 
-Host *.stg
-  ProxyCommand ssh -q -A stg -W `basename %h .staging`:%p
-  ForwardAgent yes
-  User mattp
-
-Host *.prod
-  ProxyCommand ssh -q -A prod -W `basename %h .prod`:%p
-  ForwardAgent yes
-  User mattp
+Host i-*.prod
+    ProxyCommand ssh -q prod nc -q0 $(basename %h .prod).node.consul %p
+    User mattp
