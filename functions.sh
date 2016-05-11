@@ -14,6 +14,10 @@ psgrep() {
     ps aux | grep $* | grep -v grep
 }
 
+hosts_grep() {
+    grep -h $1 ~/.ssh/hosts/*txt
+}
+
 # Man or help.
 moh () {
     cmd=$1
@@ -70,3 +74,4 @@ sumlines () {
 epoch() {
     date +%s
 }
+
