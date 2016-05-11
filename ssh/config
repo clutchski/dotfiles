@@ -7,3 +7,13 @@ Host prod
   HostName jumpbox.datadoghq.com
   User mattp
   ForwardAgent yes
+
+Host *.stg
+  ProxyCommand ssh -q -A stg -W `basename %h .staging`:%p
+  ForwardAgent yes
+  User mattp
+
+Host *.prod
+  ProxyCommand ssh -q -A prod -W `basename %h .prod`:%p
+  ForwardAgent yes
+  User mattp
