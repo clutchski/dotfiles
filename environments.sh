@@ -1,4 +1,10 @@
+#
+# machine specific config
+#
 
+mkdir -p ~/.clutchski
+
+# environment for work vm
 if [ -e ~/.clutchski/datadog ]
 then
 
@@ -25,3 +31,10 @@ then
     alias super="sudo supervisorctl"
 fi
 
+
+# environment for datadog host machine
+if [ -e ~/.clutchski/work ]
+then
+    alias vm="cd ~/code/datadog/vms/2016-04-27 && vagrant ssh"
+    alias up="cd ~/code/datadog/vms/2016-04-27 && vagrant up"
+fi
