@@ -12,7 +12,8 @@ then
 
     # python env
     source ~/python/bin/activate
-    source ~/.profile
+    source ~/.profile || true
+    source ~/.user-env || true
 
     eval "$(gimme 1.4.2)"
 
@@ -29,6 +30,8 @@ then
     export PATH=$PATH:~/code/datadog/dogweb/node_modules/.bin/:~/python/bin:/usr/local/go/bin/:$GOBIN:~/usr/bin
 
     alias super="sudo supervisorctl"
+    alias psql="psql -h /tmp -U dog dogdata"
+    alias cqlsh="PATH=/usr/bin/ cqlsh"
 fi
 
 
