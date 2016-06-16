@@ -35,6 +35,7 @@ fi
 # environment for datadog host machine
 if [ -e ~/.clutchski/work ]
 then
-    alias vm="cd ~/code/datadog/vms/2016-04-27 && vagrant ssh"
-    alias up="cd ~/code/datadog/vms/2016-04-27 && vagrant up"
+    export current_vm="~/code/datadog/vms/2016-05-18"
+    alias vm="cd $current_vm && vagrant ssh"
+    alias up="cd $current_vm && vagrant up"
 fi
