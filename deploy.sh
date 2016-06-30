@@ -19,7 +19,7 @@ do
         mkdir -p ~/.${f}
         cp -f -r ${f}/* ~/.${f}
     else
-        cp -f $f ~/.${f}
+        cp --remove-destination -f $f ~/.${f}
     fi
 done
 
