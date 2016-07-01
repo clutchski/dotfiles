@@ -19,7 +19,8 @@ do
         mkdir -p ~/.${f}
         cp -f -r ${f}/* ~/.${f}
     else
-        cp --remove-destination -f $f ~/.${f}
+        rm -f ~/.${f} # handles overwriting symlinks
+        cp -f $f ~/.${f}
     fi
 done
 
