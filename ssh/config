@@ -2,6 +2,7 @@
 Host *
 ControlMaster auto
 ControlPath ~/.ssh/sockets/%r@%h:%p
+UserKnownHostsFile ~/.ssh/known_hosts
 
 Host staging
     Hostname jumpbox.datad0g.com
