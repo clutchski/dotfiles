@@ -13,3 +13,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=true
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 [[ -s "$HOME/.tmuxinator/scripts/tmuxinator" ]] && source "$HOME/.tmuxinator/scripts/tmuxinator"
 
+if [ -e ~/.secrets.sh ]
+then
+    . ~/.secrets.sh
+fi
