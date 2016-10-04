@@ -15,7 +15,7 @@ then
     source ~/.profile || true
     source ~/.user-env || true
 
-    eval "$(gimme 1.6.3)"
+    eval "$(gimme 1.7.1)"
 
     # go env
     export GOPATH=~/code/datadog/go
