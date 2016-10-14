@@ -38,6 +38,13 @@ fi
 # environment for datadog host machine
 if [ -e ~/.clutchski/work ]
 then
+    export GOPATH=~/code/datadog/go
+    export GOBIN=$GOPATH/bin
+    export DDGO=$GOPATH/src/github.com/DataDog/
+    mkdir -p $DDGO
+
+    eval "$(gimme 1.7.1)"
+
     export current_vm="~/code/datadog/vms/current"
     alias vm="cd $current_vm && vagrant ssh"
     alias up="cd $current_vm && vagrant up"
