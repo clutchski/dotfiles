@@ -24,6 +24,7 @@
 
     # destroy a branch locally and remote
     destroy =  "!gd() { git branch -d $1 && git push origin :$1; }; gd"
+    killwithfire =  "!gkwf() { git branch -D $1 && git push origin :$1; }; gkwf"
 
     # print paths of conflicting files
     conflicts = diff --name-only --diff-filter=U
