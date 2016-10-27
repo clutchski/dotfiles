@@ -35,6 +35,7 @@ let g:startify_custom_header = [''] " disable header
 " Don't try to autoinstall go by default
 let g:go_disable_autoinstall = 1
 let g:go_auto_type_info = 0
+let g:go_fmt_command = "goimports"
 
 " ctrlp config
 let g:ctrlp_cmd = 'CtrlPMixed'
