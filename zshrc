@@ -24,6 +24,5 @@ unsetopt correct_all
 
 # Customize to your needs...
 . ~/.exports.sh
-. ~/.aliases.sh
 . ~/.functions.sh
 . ~/.environments.sh
