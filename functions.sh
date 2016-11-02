@@ -1,7 +1,8 @@
 # Remove vim swp files
-rmswp () {
-    rm -f ~/.vim/tmp/*.sw*
+vimclean () {
+    rm -rf ~/.vim/tmp
     find . -name "*.sw*" -exec rm {} \;
+    rm -rf ~/.cache/ctrlp
 }
 
 # tags

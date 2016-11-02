@@ -44,7 +44,6 @@ let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_mruf_relative = 1
 let g:ctrlp_reuse_window  = 'startify\|netrw'
 
-
 "=============
 " Behaviour
 "=============
@@ -91,10 +90,6 @@ nnoremap k gk
 
 map - :Explore<cr>
 set pastetoggle=<F2>
-
-" Ack integration. Uncomment on ubuntu.
-" let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-"
 
 "================
 " View
