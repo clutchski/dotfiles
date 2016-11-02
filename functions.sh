@@ -20,3 +20,13 @@ gogo() {
     cd $GOPATH/src
 }
 
+alias_if_exists () {
+    which $1 &> /dev/null
+    if [ $? -eq 0 ]
+    then
+        alias $2="$1"
+    fi
+}
+
+# Ubuntu aliases.
+alias_if_exists "gnome-open" "open"
