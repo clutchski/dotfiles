@@ -2,6 +2,7 @@
 Host *
 ControlMaster auto
 ControlPath ~/.ssh/sockets/%r@%h:%p
+ControlPersist 10m
 UserKnownHostsFile ~/.ssh/known_hosts
 
 Host staging
