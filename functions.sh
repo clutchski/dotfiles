@@ -29,5 +29,9 @@ alias_if_exists () {
     fi
 }
 
+usrbin() {
+    curl --data "@$1" https://usrbin.herokuapp.com/
+}
+
 # Ubuntu aliases.
 alias_if_exists "gnome-open" "open"
