@@ -12,10 +12,8 @@ then
 
     # python env
     source ~/python/bin/activate
-    source ~/.profile || true
     source ~/.user-env || true
-
-    eval "$(gimme 1.7.1)"
+    eval "$(gimme 1.7.4)"
 
     # go env
     export GOPATH=~/code/datadog/go
