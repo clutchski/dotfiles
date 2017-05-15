@@ -23,8 +23,8 @@
     f = "!git ls-files | grep -i"
 
     # destroy a branch locally and remote
-    destroy =  "!gd() { git branch -d $1 && git push origin :$1; }; gd"
-    killwithfire =  "!gkwf() { git branch -D $1 && git push origin :$1; }; gkwf"
+    destroy =  "!gd() { git branch -D $1 && git push origin :$1; }; gd"
+    close =  "!gd() { git branch -d $1 && git push origin :$1; }; gd"
 
     # print paths of conflicting files
     conflicts = diff --name-only --diff-filter=U
