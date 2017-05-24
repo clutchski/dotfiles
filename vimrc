@@ -72,8 +72,9 @@ let g:netrw_list_hide='^\(\..\{-}\.sw.\|.\{-}\.pyc\)$' " FIXME: use wildignore??
 " Reopen with sudo.
 cmap w!! w !sudo tee % >/dev/null
 
-" Disable the never used ex-mode.
+" Disable the never used ex-mode & recording mode
 map Q <Nop>
+map q <Nop>
 
 nnoremap ; :
 
