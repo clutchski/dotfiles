@@ -33,5 +33,5 @@ usrbin() {
     curl --data "@$1" https://usrbin.herokuapp.com/
 }
 
-# Ubuntu aliases.
 alias_if_exists "gnome-open" "open"
+alias_if_exists "sqlite3" "sqlite"
