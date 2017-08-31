@@ -16,13 +16,14 @@ then
     eval "$(gimme 1.8)"
 
     # go env
-    export GOPATH=~/code/datadog/go
+    export GOPATH=~/go
     export GOBIN=$GOPATH/bin
     export DDGO=$GOPATH/src/github.com/DataDog/
     export DD=~/code/datadog/
     export DOGWEB=~/code/datadog/dogweb/
     export DDJS=~/code/datadog/dogweb/dogweb/javascript/
     export DDJSX=~/code/datadog/dogweb/dogweb/javascript/datadog/react
+    export DATADOG_ROOT=$DDGO
 
     # path
     export PATH=$PATH:~/code/datadog/dogweb/node_modules/.bin/:~/python/bin:/usr/local/go/bin/:$GOBIN:~/usr/bin
@@ -36,11 +37,12 @@ fi
 # environment for datadog host machine
 if [ -e ~/.clutchski/work ]
 then
-    export GOPATH=~/code/datadog/go
+    export GOPATH=~/go
     export GOBIN=$GOPATH/bin
     export DDGO=$GOPATH/src/github.com/DataDog/
     export PATH=$PATH:$GOBIN
     mkdir -p $DDGO
+    export DATADOG_ROOT=$DDGO
 
     eval "$(gimme 1.8)"
 
