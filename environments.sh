@@ -13,7 +13,7 @@ then
     # python env
     source ~/python/bin/activate
     source ~/.user-env || true
-    eval "$(gimme 1.8)"
+    eval "$(gimme 1.9)"
 
     # go env
     export GOPATH=~/go
@@ -44,7 +44,7 @@ then
     mkdir -p $DDGO
     export DATADOG_ROOT=$DDGO
 
-    eval "$(gimme 1.8)"
+    eval "$(gimme 1.9)"
 
     export current_vm="~/code/datadog/vms/current"
     alias vm="cd $current_vm && vagrant ssh"
