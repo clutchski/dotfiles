@@ -46,7 +46,7 @@ then
 
     eval "$(gimme 1.9)"
 
-    export current_vm="~/code/datadog/vms/current"
+    export current_vm=$DATADOG_ROOT
     alias vm="cd $current_vm && vagrant ssh"
     alias up="cd $current_vm && vagrant up"
 fi
