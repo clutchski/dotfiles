@@ -4,6 +4,13 @@
 
 mkdir -p ~/.clutchski
 
+# enable go
+which gimme &> /dev/null
+if [ $? -eq 0 ]
+then
+   eval "$(gimme 1.11 &> /dev/null)" 
+fi
+
 # environment for work vm
 if [ -e ~/.clutchski/datadog ]
 then
@@ -13,7 +20,6 @@ then
     # python env
     source ~/python/bin/activate
     source ~/.user-env || true
-    eval "$(gimme 1.9)"
 
     # go env
     export GOPATH=~/go
@@ -43,8 +49,6 @@ then
     export PATH=$PATH:$GOBIN
     mkdir -p $DDGO
     export DATADOG_ROOT=$DDGO
-
-    eval "$(gimme 1.9)"
 
     export current_vm=$DATADOG_ROOT
     alias vm="cd $current_vm && vagrant ssh"
