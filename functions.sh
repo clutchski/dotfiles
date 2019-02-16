@@ -40,3 +40,7 @@ camera_reset() {
     sudo killall VDCAssistant
     sudo killall AppleCameraAssistant
 }
+
+ytmp3() {
+    youtube-dl --extract-audio --audio-format mp3 $1:x
+}
