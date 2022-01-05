@@ -6,21 +6,3 @@ ControlPersist 10m
 UserKnownHostsFile ~/.ssh/known_hosts
 UseKeychain yes
 AddKeysToAgent yes
-
-Host staging
-    Hostname jumpbox.datad0g.com
-    ForwardAgent yes
-    User mattp
-
-Host i-*.staging
-    ProxyCommand ssh -q staging nc -q0 $(basename %h .staging).node.consul %p
-    User mattp
-
-Host prod
-    Hostname jumpbox.datadoghq.com
-    ForwardAgent yes
-    User mattp
-
-Host i-*.prod
-    ProxyCommand ssh -q prod nc -q0 $(basename %h .prod).node.consul %p
-    User mattp

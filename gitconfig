@@ -32,9 +32,6 @@
     # hard reset to origin's current branch state
     hro = "!githro() { git reset --hard origin/$(git rev-parse --abbrev-ref HEAD); }; githro"
 
-    # find the current datadog staging branch
-    staging = "!g() { git fetch -p && git bra | grep 'remotes/origin/staging'; }; g"
-
 [core]
     whitespace = trailing-space,space-before-tab,cr-at-eol
 	excludesfile = /home/vagrant/.gitignore
