@@ -52,10 +52,12 @@ etchost_block () {
   else
     # loop through hosts and block each one on ipv4 + ipv6
     while (($#)); do
-      echo "echo \"\n## block $1\"        >> /etc/hosts" | sudo sh
-      echo "echo \"127.0.0.1  $1 www.$1\" >> /etc/hosts" | sudo sh
-      echo "echo \"::1        $1 www.$1\" >> /etc/hosts" | sudo sh
-      echo "echo \"## /block $1\"         >> /etc/hosts" | sudo sh
+      if ! grep -q "## block $1" /etc/hosts; then
+        echo "echo \"\n## block $1\"        >> /etc/hosts" | sudo sh
+        echo "echo \"127.0.0.1  $1 www.$1\" >> /etc/hosts" | sudo sh
+        echo "echo \"::1        $1 www.$1\" >> /etc/hosts" | sudo sh
+        echo "echo \"## /block $1\"         >> /etc/hosts" | sudo sh
+      fi
       shift
     done
   fi
@@ -72,5 +74,5 @@ etchost_unblock () {
 
 
 etchost_block_blackholes() {
-    etchost_block facebook.com reddit.com
+    etchost_block facebook.com reddit.com instagram.com
 }
