@@ -8,5 +8,5 @@ mkdir -p ~/.clutchski
 which gimme &> /dev/null
 if [ $? -eq 0 ]
 then
-   eval "$(gimme stable &> /dev/null)" 
+    eval "$(gimme stable)" &> /dev/null
 fi
