@@ -61,5 +61,7 @@ etchost_unblock () {
 
 
 etchost_block_blackholes() {
-    etchost_block facebook.com reddit.com instagram.com
+    while read b; do
+        etchost_block $b
+    done < ~/.blackholes
 }
