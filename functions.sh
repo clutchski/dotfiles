@@ -20,9 +20,6 @@ alias_if_exists () {
     fi
 }
 
-alias_if_exists "gnome-open" "open"
-alias_if_exists "sqlite3" "sqlite"
-
 camera_reset() {
     sudo killall VDCAssistant
     sudo killall AppleCameraAssistant
