@@ -21,6 +21,7 @@ Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/SearchComplete'
+Bundle 'morhetz/gruvbox'
 
 filetype plugin indent on
 
@@ -96,7 +97,10 @@ set pastetoggle=<F2>
 " View
 "================
 
-colorscheme peachpuff
+"colorscheme molokai
+let g:gruvbox_contrast_dark = 'hard'
+autocmd vimenter * ++nested colorscheme gruvbox
+
 syntax on
 set ruler
 set number
