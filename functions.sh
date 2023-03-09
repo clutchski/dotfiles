@@ -26,7 +26,7 @@ camera_reset() {
 }
 
 youtube_to_mp3() {
-    youtube-dl --extract-audio --audio-format mp3 $1:x
+    yt-dlp --extract-audio --audio-format mp3 $1:x
 }
 
 etchost_block () {
