@@ -4,13 +4,6 @@
 
 mkdir -p ~/.clutchski
 
-# enable go
-which gimme &> /dev/null
-if [ $? -eq 0 ]
-then
-    eval "$(gimme stable)" &> /dev/null
-fi
-
 # use python3 if pythont2 isn't installed
 which python &> /dev/null
 if [ $? -ne 0 ]

@@ -3,7 +3,7 @@
 export PYTHONSTARTUP=~/.pythonrc
 export EDITOR=vim
 export SCREENDIR=~/.screen
-export PATH=$PATH:/usr/local/bin:~/bin:~/go/bin:/opt/homebrew/bin
+export PATH=$PATH:/usr/local/bin:~/bin:/opt/homebrew/bin:/usr/local/go/bin/
 export HISTFILE=~/.histfile
 export HISTSIZE=1000
 export SAVEHIST=1000

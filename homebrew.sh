@@ -1,4 +1,3 @@
-brew install gimme
 brew install htop
 brew install ripgrep
 brew install the_silver_searcher
