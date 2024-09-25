@@ -25,4 +25,3 @@ unsetopt correct_all
 # Customize to your needs...
 . ~/.exports.sh
 . ~/.functions.sh
-. ~/.environments.sh

@@ -2,4 +2,3 @@
 
 . ~/.exports.sh
 . ~/.functions.sh
-. ~/.environments.sh
