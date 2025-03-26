@@ -10,7 +10,7 @@ gitforcepush() {
   if [ "$branch" = "main" ] || [ "$branch" = "master" ]; then
     echo "No force pushing to '$branch"
   else
-    echo git push origin --force "$branch"
+    git push origin --force "$branch"
   fi
 }
 
