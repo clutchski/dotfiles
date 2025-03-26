@@ -5,16 +5,11 @@
 [alias]
     # shorthands
     st = status -sb
-    sti = status -s --ignored
     ci = commit
-    br = branch
-    bra = branch -a
     co = checkout
-    df = diff
     lg = log -p
     stashes = stash list
     unstage = reset HEAD
-    dl = "!dl() { git fetch -pq && git pull;}; dl"
 
     # pretty print history
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
@@ -22,15 +17,13 @@
     tree = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
     f = "!git ls-files | grep -i"
 
-    # destroy a branch locally and remote
-    destroy =  "!gd() { git branch -D $1 && git push origin :$1; }; gd"
-    close =  "!gd() { git branch -d $1 && git push origin :$1; }; gd"
-
     # print paths of conflicting files
     conflicts = diff --name-only --diff-filter=U
 
     # hard reset to origin's current branch state
-    hro = "!githro() { git reset --hard origin/$(git rev-parse --abbrev-ref HEAD); }; githro"
+    hardreset = "!githro() { git reset --hard origin/$(git rev-parse --abbrev-ref HEAD); }; githro"
+
+    rebasemain = "!grbm() { git fetch origin && git rebase origin/main; }; grbm"
 
 [core]
     whitespace = trailing-space,space-before-tab,cr-at-eol
