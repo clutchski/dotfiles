@@ -1,3 +1,19 @@
+
+# Push the current branch to orign.
+alias gitpush='git push -u origin "$(git rev-parse --abbrev-ref HEAD)"'
+
+
+# Force push the current branch, as long as it's not master or main.
+gitforcepush() {
+  branch=$(git rev-parse --abbrev-ref HEAD)
+
+  if [ "$branch" = "main" ] || [ "$branch" = "master" ]; then
+    echo "No force pushing to '$branch"
+  else
+    echo git push origin --force "$branch"
+  fi
+}
+
 # Remove vim swp files
 vimclean () {
     rm -rf ~/.vim/tmp

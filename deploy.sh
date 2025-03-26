@@ -15,6 +15,8 @@ do
         continue
     fi
 
+    # symlink instead?
+
     if [ -d $f ]; then
         mkdir -p ~/.${f}
         cp -f -r ${f}/* ~/.${f}
@@ -37,7 +39,6 @@ git config --global core.excludesfile ~/.gitignore
 if [[ -n $1  &&  -n $2 ]] ; then
     git config --global user.name "$1"
     git config --global user.email "$2"
+elif [[ "$(hostname)" == bt* ]]; then
+    git config --global user.email "matt@braintrustdata.com"
 fi
-
-
-
