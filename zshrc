@@ -12,7 +12,7 @@ export ZSH_THEME="clutchski"
 export DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(gitfast macos python gem pip extract asdf nvm rust)
+plugins=(gitfast macos python gem pip extract nvm rust mise)
 
 source $ZSH/oh-my-zsh.sh
 
