@@ -11,8 +11,12 @@ export ZSH_THEME="clutchski"
 # Comment this out to disable weekly auto-update checks
 export DISABLE_AUTO_UPDATE="true"
 
+# Customize to your needs...
+. ~/.exports.sh
+. ~/.functions.sh
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(gitfast macos python gem pip extract nvm rust mise)
+plugins=(gitfast macos python pip extract nvm rust mise)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -21,7 +25,3 @@ DISABLE_AUTO_TITLE=true
 setopt auto_name_dirs
 setopt no_prompt_cr
 unsetopt correct_all
-
-# Customize to your needs...
-. ~/.exports.sh
-. ~/.functions.sh
