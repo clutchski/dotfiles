@@ -10,6 +10,9 @@ export VIRTUAL_ENV_DISABLE_PROMPT=true
 export PATH=$PATH:/usr/local/bin:~/bin:/opt/homebrew/bin:/usr/local/go/bin/:~/.cargo/bin
 
 # install pyenv
-# export PATH="$HOME/.pyenv/bin:$PATH"
-# eval "$(pyenv init --path)"
-# eval "$(pyenv init -)"
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+
+export BT=~/code/braintrustdata/braintrust
+export BT_SDK=~/code/braintrustdata/braintrust-sdk

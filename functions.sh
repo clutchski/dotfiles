@@ -1,6 +1,7 @@
 
 # Push the current branch to orign.
 alias gitpush='git push -u origin "$(git rev-parse --abbrev-ref HEAD)"'
+alias gitst="git st"
 
 
 # Force push the current branch, as long as it's not master or main.
@@ -25,7 +26,7 @@ vimclean () {
 # Print the directory of a Python module.
 pymod ()  {
     # FIXME: could replace in the middle of a path
-    python -c "import $1; print $1.__file__.replace('.pyc', '.py')"
+    python -c "import $1; print($1.__file__.replace('.pyc', '.py'))"
 }
 
 alias_if_exists () {
