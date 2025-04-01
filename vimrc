@@ -22,6 +22,7 @@ Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-scripts/SearchComplete'
 Bundle 'morhetz/gruvbox'
+Bundle 'leafgarland/typescript-vim'
 
 filetype plugin indent on
 
