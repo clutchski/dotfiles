@@ -36,9 +36,9 @@ vim +BundleInstall +qall
 
 # Set up git.
 git config --global core.excludesfile ~/.gitignore
-if [[ -n $1  &&  -n $2 ]] ; then
-    git config --global user.name "$1"
-    git config --global user.email "$2"
-elif [[ "$(hostname)" == bt* ]]; then
+
+if [[ "$(hostname)" == bt* ]]; then
     git config --global user.email "matt@braintrustdata.com"
+    export BT=~/code/braintrustdata/braintrust
+    export BT_SDK=~/code/braintrustdata/braintrust-sdk
 fi
