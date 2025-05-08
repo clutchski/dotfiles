@@ -16,6 +16,8 @@
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     tree = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+
+    # find
     f = "!git ls-files | grep -i"
 
     # print paths of conflicting files
@@ -44,3 +46,6 @@
 [pager]
     branch = false
     tag = false
+
+[pull]
+    prune = true
