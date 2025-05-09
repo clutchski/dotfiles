@@ -16,7 +16,7 @@ export DISABLE_AUTO_UPDATE="true"
 . ~/.functions.sh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(gitfast macos python pip extract nvm rust mise)
+plugins=(gitfast macos python pip extract rust mise wd)
 
 source $ZSH/oh-my-zsh.sh
 

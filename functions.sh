@@ -5,7 +5,7 @@ alias gitst="git st"
 
 
 # Force push the current branch, as long as it's not master or main.
-gitforcepush() {
+git_force_push() {
   branch=$(git rev-parse --abbrev-ref HEAD)
 
   if [ "$branch" = "main" ] || [ "$branch" = "master" ]; then
@@ -13,6 +13,29 @@ gitforcepush() {
   else
     git push origin --force "$branch"
   fi
+}
+
+# Prune remote branches and delete local branches that have been deleted on the remote
+git_branch_cleanup() {
+    git fetch -p
+
+    deleted_branches=$(git branch -vv | grep ': gone]' | awk '{print $1}')
+
+    if [ -z "$deleted_branches" ]; then
+        return 0
+    fi
+
+    echo "$deleted_branches"
+
+    echo -e "\nDo you want to delete these local branches? [y/N]"
+    read -r confirm
+
+    if [[ "$confirm" =~ ^[Yy]$ ]]; then
+        echo "$deleted_branches" | xargs -r git branch -D
+        echo "Branches deleted successfully."
+    else
+        echo "Operation cancelled."
+    fi
 }
 
 # Remove vim swp files
@@ -79,3 +102,5 @@ etchost_block_blackholes() {
         etchost_block $b
     done < ~/.blackholes
 }
+
+
