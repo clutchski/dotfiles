@@ -25,9 +25,8 @@ git_branch_cleanup() {
         return 0
     fi
 
-    echo "$deleted_branches"
-
     echo -e "\nDo you want to delete these local branches? [y/N]"
+    echo "$deleted_branches"
     read -r confirm
 
     if [[ "$confirm" =~ ^[Yy]$ ]]; then
