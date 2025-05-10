@@ -16,7 +16,6 @@ do
     fi
 
     # symlink instead?
-
     if [ -d $f ]; then
         mkdir -p ~/.${f}
         cp -f -r ${f}/* ~/.${f}
@@ -25,6 +24,12 @@ do
         cp -f $f ~/.${f}
     fi
 done
+
+# Check if the Brewfile needs to be applied
+if ! brew bundle check > /dev/null ; then
+  echo "📦 Installing missing packages from Brewfile..."
+  brew bundle
+fi
 
 # Setup vim.
 mkdir -p ~/.vim/backup ~/.vim/tmp
