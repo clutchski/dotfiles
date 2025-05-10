@@ -32,12 +32,12 @@ if ! brew bundle check > /dev/null ; then
 fi
 
 # Setup vim.
-mkdir -p ~/.vim/backup ~/.vim/tmp
-if [ ! -d ~/.vim/bundle/vundle ]; then
-    echo "Cloning vundle"
-    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+if [ ! -f ~/.vim/autoload/plug.vim ]; then
+    echo "Installing vim-plug..."
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
-vim +BundleInstall +qall
+vim +'PlugInstall --sync' +qa
 
 # Set up git.
 git config --global core.excludesfile ~/.gitignore

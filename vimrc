@@ -2,29 +2,20 @@
 " Plugins
 "============
 
-" Set up vundle
-set nocompatible
-filetype off
+" Set up vim-plug
+call plug#begin('~/.vim/plugged')
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+Plug 'bling/vim-bufferline'
+Plug 'fatih/vim-go'
+Plug 'mhinz/vim-startify'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/SearchComplete'
+Plug 'leafgarland/typescript-vim'
+Plug 'gruvbox-community/gruvbox'
 
-" install the plugins
-Bundle 'gmarik/vundle'
-
-Bundle 'bling/vim-bufferline'
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'fatih/vim-go'
-" Bundle 'jlanzarotta/bufexplorer'
-Bundle 'mhinz/vim-startify'
-Bundle 'ntpeters/vim-better-whitespace'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-fugitive'
-Bundle 'vim-scripts/SearchComplete'
-Bundle 'morhetz/gruvbox'
-Bundle 'leafgarland/typescript-vim'
-
-filetype plugin indent on
+call plug#end()
 
 " configure startify
 let g:startify_skiplist = [
@@ -98,7 +89,6 @@ set pastetoggle=<F2>
 " View
 "================
 
-"colorscheme molokai
 let g:gruvbox_contrast_dark = 'hard'
 autocmd vimenter * ++nested colorscheme gruvbox
 
