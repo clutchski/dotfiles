@@ -7,6 +7,9 @@ brew "gh"
 brew "mise"
 brew "watchexec"
 brew "mas"
+brew "jq"
+
+cask "1password-cli"
 
 # cask "spotify"
 # cask "iterm2"
