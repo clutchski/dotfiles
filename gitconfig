@@ -13,7 +13,7 @@
     tags = tag -l
 
     # pretty print history
-    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ls = log --pretty=format:'%C(yellow)%h %Cgreen%ad %Cred%d %Creset%s %Cblue[%an]%Creset %C(green)[%cr]' --date=short --decorate
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     tree = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 
@@ -30,7 +30,7 @@
 
 [core]
     whitespace = trailing-space,space-before-tab,cr-at-eol
-	excludesfile = /home/vagrant/.gitignore
+    excludesfile = ~/.gitignore
 
 [color]
     ui = true
