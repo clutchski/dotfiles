@@ -14,6 +14,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/SearchComplete'
 Plug 'leafgarland/typescript-vim'
 Plug 'gruvbox-community/gruvbox'
+Plug 'ctrlpvim/ctrlp.vim'
+
 
 call plug#end()
 
