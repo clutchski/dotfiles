@@ -1,7 +1,18 @@
 This file guides Claude Code on my coding principles and preferences.
 
-## Coding Principles
+## Development Style
+Follow **Test-Driven Development (TDD)**:
+- Write one failing test first.
+- Write the minimal code needed to make the test pass.
+- Refactor the code if needed.
+- Repeat this cycle for each feature or requirement.
 
-- Practice test driven development. Before we write code, write tests that model the behavior we want to see. Run them and make sure they fail before we implement the solution. Then try to solve the problem and verify the tests work. Keep iterating.
-- Make a plan. Think hard about the steps you need to take to solve a problem. Show me your plan before you start working.
-- Don't commit code or push branches. I will.
+## Workflow Preferences
+- Ask the user for confirmation before proceeding to the next step.
+- Explain the purpose of each test before writing it.
+- Use small, incremental steps for clarity and traceability.
+
+## Code Style
+- Use clear, readable code.
+- Prefer standard testing libraries for the language (e.g., `pytest`, `unittest`, `jest`).
+- Add comments only where they help clarify intent.
