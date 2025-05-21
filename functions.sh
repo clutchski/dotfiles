@@ -1,41 +1,18 @@
 #!/usr/bin/env bash
 
-# Push the current branch to orign.
-alias gitpush='git push -u origin "$(git rev-parse --abbrev-ref HEAD)"'
-alias gitst="git st"
 
+. ~/.exts/git.sh
 
-# Force push the current branch, as long as it's not master or main.
-git_force_push() {
-  branch=$(git rev-parse --abbrev-ref HEAD)
-
-  if [ "$branch" = "main" ] || [ "$branch" = "master" ]; then
-    echo "No force pushing to '$branch"
+# Run claude from the repository root
+claude-root() {
+  local root_dir
+  root_dir=$(git rev-parse --show-toplevel 2>/dev/null)
+  
+  if [ $? -eq 0 ]; then
+    cd "$root_dir" && claude "$@"
   else
-    git push origin --force "$branch"
+    claude "$@"
   fi
-}
-
-# Prune remote branches and delete local branches that have been deleted on the remote
-git_branch_cleanup() {
-    git fetch -p
-
-    deleted_branches=$(git branch -vv | grep ': gone]' | awk '{print $1}')
-
-    if [ -z "$deleted_branches" ]; then
-        return 0
-    fi
-
-    echo -e "\nDo you want to delete these local branches? [y/N]"
-    echo "$deleted_branches"
-    read -r confirm
-
-    if [[ "$confirm" =~ ^[Yy]$ ]]; then
-        echo "$deleted_branches" | xargs -r git branch -D
-        echo "Branches deleted successfully."
-    else
-        echo "Operation cancelled."
-    fi
 }
 
 # Remove vim swp files
@@ -162,3 +139,5 @@ op_save_login() {
   echo "✅ Login saved as '$DOMAIN'"
   echo "🔗 View in 1Password: $LINK"
 }
+
+
