@@ -44,6 +44,4 @@ git config --global core.excludesfile ~/.gitignore
 
 if [[ "$(hostname)" == bt* ]]; then
     git config --global user.email "matt@braintrustdata.com"
-    export BT=~/code/braintrustdata/braintrust
-    export BT_SDK=~/code/braintrustdata/braintrust-sdk
 fi
