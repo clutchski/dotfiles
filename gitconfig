@@ -12,6 +12,7 @@
     unstage = reset HEAD
     tags = tag -l
     undo = reset --mixed HEAD~1
+    sup = submodule update
 
     # pretty print history
     ls = log --pretty=format:'%C(yellow)%h %Cgreen%ad %Cred%d %Creset%s %Cblue[%an]%Creset %C(green)[%cr]' --date=short --decorate
