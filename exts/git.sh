@@ -38,17 +38,28 @@ git_branch_cleanup() {
         echo "Operation cancelled."
     fi
 }
-# Delete a git branch both locally and on origin with confirmation
+# Delete git branches both locally and on origin with confirmation
 git_branch_delete() {
-  BRANCH_NAME="$1"
+  if [ $# -eq 0 ]; then
+    echo "Usage: git_branch_delete <branch1> [branch2] [branch3] ..."
+    return 1
+  fi
   
-  echo -e "Are you sure you want to delete branch '${BRANCH_NAME}' locally and on origin? [y/N]"
+  echo -e "Are you sure you want to delete the following branches locally and on origin? [y/N]"
+  for branch in "$@"; do
+    echo "  - ${branch}"
+  done
   read -r confirm
 
   if [[ "$confirm" =~ ^[Yy]$ ]]; then
-    git branch -D "${BRANCH_NAME}"
-    git push origin --delete "${BRANCH_NAME}"
-    echo "Branch '${BRANCH_NAME}' deleted"
+    for branch in "$@"; do
+      echo "Deleting branch '${branch}'..."
+      git branch -D "${branch}"
+      git push origin --delete "${branch}"
+      echo "Branch '${branch}' deleted"
+    done
+  else
+    echo "Operation cancelled."
   fi
 }
 
