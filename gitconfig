@@ -26,9 +26,10 @@
     conflicts = diff --name-only --diff-filter=U
 
     # hard reset to origin's current branch state
-    hardreset = "!githro() { git reset --hard origin/$(git rev-parse --abbrev-ref HEAD); }; githro"
+    hard-reset = "!githro() { git reset --hard origin/$(git rev-parse --abbrev-ref HEAD); }; githro"
 
-    rebasemain = "!grbm() { git fetch origin && git rebase origin/main; }; grbm"
+    rebase-main = "!git fetch origin main && git rebase origin/main"
+    merge-main = "!git fetch origin main && git merge origin/main"
 
 [core]
     whitespace = trailing-space,space-before-tab,cr-at-eol

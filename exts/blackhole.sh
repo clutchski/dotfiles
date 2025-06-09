@@ -19,12 +19,18 @@ etchost_block () {
 }
 
 etchost_unblock () {
-  while (($#)); do
-    # remove specified hosts and squash multiple empty lines
-    newContents=$(sed "/## block $1/,/## \/block/d" /etc/hosts | sed '/./,/^$/!d')
+  if [[ $# -eq 0 ]]; then
+    # no args == remove all blocked hosts
+    newContents=$(sed '/## block /,/## \/block/d' /etc/hosts | sed '/./,/^$/!d')
     echo "echo \"$newContents\" > /etc/hosts" | sudo sh
-    shift
-  done
+  else
+    # remove specified hosts and squash multiple empty lines
+    while (($#)); do
+      newContents=$(sed "/## block $1/,/## \/block/d" /etc/hosts | sed '/./,/^$/!d')
+      echo "echo \"$newContents\" > /etc/hosts" | sudo sh
+      shift
+    done
+  fi
 }
 
 
