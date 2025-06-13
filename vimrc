@@ -6,7 +6,6 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'bling/vim-bufferline'
-Plug 'fatih/vim-go'
 Plug 'mhinz/vim-startify'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-eunuch'
@@ -15,6 +14,7 @@ Plug 'vim-scripts/SearchComplete'
 Plug 'leafgarland/typescript-vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 
 call plug#end()

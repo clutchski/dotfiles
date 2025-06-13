@@ -108,4 +108,24 @@ op_save_login() {
   echo "🔗 View in 1Password: $LINK"
 }
 
+# Usage: maker [make arguments...]
+maker() {
+    local dir="$PWD"
+    local makefile_dir
 
+    # Search up the directory tree for a Makefile
+    while [ "$dir" != "/" ]; do
+        if [ -f "$dir/Makefile" ] || [ -f "$dir/makefile" ] || [ -f "$dir/GNUmakefile" ]; then
+            makefile_dir="$dir"
+            break
+        fi
+        dir="$(dirname "$dir")"
+    done
+
+    if [ -n "$makefile_dir" ]; then
+        (cd "$makefile_dir" && make "$@")
+    else
+        echo "No Makefile found in current directory or any parent directory" >&2
+        return 1
+    fi
+}
