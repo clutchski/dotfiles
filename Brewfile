@@ -8,7 +8,9 @@ brew "mise"
 brew "watchexec"
 brew "mas"
 brew "jq"
+brew "fzf"
 
+cask "rectangle"
 cask "1password-cli"
 
 # cask "spotify"
