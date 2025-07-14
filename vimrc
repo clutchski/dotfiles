@@ -15,7 +15,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
@@ -31,6 +31,8 @@ let g:startify_custom_header = [''] " disable header
 let g:go_disable_autoinstall = 1
 let g:go_auto_type_info = 0
 let g:go_fmt_command = "goimports"
+
+let g:rustfmt_autosave = 1
 
 " ctrlp config
 let g:ctrlp_cmd = 'CtrlPMixed'
