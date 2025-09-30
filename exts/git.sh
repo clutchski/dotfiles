@@ -63,6 +63,14 @@ git_branch_delete() {
   fi
 }
 
+git_branch_squash() {
+    BRANCH=$(git rev-parse --abbrev-ref HEAD)
+    BASE=${1:-main}
+    MERGE_BASE=$(git merge-base HEAD $BASE)
+    echo "Squashing $BRANCH onto $BASE (merge-base: $MERGE_BASE)"
+    git reset --soft $MERGE_BASE && echo "All changes staged. Commit manually with: git commit"
+}
+
 # Delete a git tag both locally and on origin with confirmation
 git_tag_delete() {
   TAG_NAME="$1"
