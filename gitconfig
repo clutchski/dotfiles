@@ -10,7 +10,7 @@
     lg = log -p
     stashes = stash list
     unstage = reset HEAD
-    tags = tag -l
+    tags = tag -l --sort=-version:refname
     undo = reset --mixed HEAD~1
     sup = submodule update
 
