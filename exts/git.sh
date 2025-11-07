@@ -92,7 +92,7 @@ git_worktree_create() {
   SANITIZED_BRANCH=$(echo "$BRANCH_NAME" | tr '/' '-')
 
   # Create worktree directory name
-  WORKTREE_DIR="${PARENT_DIR}/${REPO_NAME}-${SANITIZED_BRANCH}"
+  WORKTREE_DIR="${PARENT_DIR}/${REPO_NAME}_worktree_${SANITIZED_BRANCH}"
 
   if [ -d "$WORKTREE_DIR" ]; then
     echo "Error: Directory already exists: $WORKTREE_DIR"
