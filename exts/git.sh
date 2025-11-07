@@ -84,7 +84,22 @@ git_worktree_create() {
   BASE_BRANCH="${2:-main}"
 
   # Get the repo name and parent directory
-  REPO_ROOT=$(git rev-parse --show-toplevel)
+  # Use PWD to preserve symlinks instead of git rev-parse which resolves them
+  # Walk up from current directory to find the git root while preserving symlinks
+  CURRENT_DIR="$PWD"
+  while [ "$CURRENT_DIR" != "/" ]; do
+    if [ -d "$CURRENT_DIR/.git" ] || [ -f "$CURRENT_DIR/.git" ]; then
+      REPO_ROOT="$CURRENT_DIR"
+      break
+    fi
+    CURRENT_DIR=$(dirname "$CURRENT_DIR")
+  done
+
+  # Fallback to git rev-parse if we couldn't find .git (shouldn't happen in a valid repo)
+  if [ -z "$REPO_ROOT" ]; then
+    REPO_ROOT=$(git rev-parse --show-toplevel)
+  fi
+
   REPO_NAME=$(basename "$REPO_ROOT")
   PARENT_DIR=$(dirname "$REPO_ROOT")
 
