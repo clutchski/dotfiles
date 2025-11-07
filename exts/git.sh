@@ -71,10 +71,73 @@ git_branch_squash() {
     git reset --soft $MERGE_BASE && echo "All changes staged. Commit manually with: git commit"
 }
 
+# Create a git worktree in a parallel directory
+git_worktree_new() {
+  if [ $# -eq 0 ]; then
+    echo "Usage: git_worktree_new <branch_name> [base_branch]"
+    echo "  Creates a worktree in a parallel directory"
+    echo "  Default base branch: main"
+    return 1
+  fi
+
+  BRANCH_NAME="$1"
+  BASE_BRANCH="${2:-main}"
+
+  # Get the repo name and parent directory
+  REPO_ROOT=$(git rev-parse --show-toplevel)
+  REPO_NAME=$(basename "$REPO_ROOT")
+  PARENT_DIR=$(dirname "$REPO_ROOT")
+
+  # Sanitize branch name for directory (replace / with -)
+  SANITIZED_BRANCH=$(echo "$BRANCH_NAME" | tr '/' '-')
+
+  # Create worktree directory name
+  WORKTREE_DIR="${PARENT_DIR}/${REPO_NAME}-${SANITIZED_BRANCH}"
+
+  if [ -d "$WORKTREE_DIR" ]; then
+    echo "Error: Directory already exists: $WORKTREE_DIR"
+    return 1
+  fi
+
+  echo "Creating worktree for branch '${BRANCH_NAME}' from '${BASE_BRANCH}'..."
+  echo "Location: ${WORKTREE_DIR}"
+
+  git worktree add -b "$BRANCH_NAME" "$WORKTREE_DIR" "$BASE_BRANCH"
+
+  if [ $? -eq 0 ]; then
+    echo "Worktree created successfully!"
+
+    # Copy .env if it exists
+    if [ -f "$REPO_ROOT/.env" ]; then
+      cp "$REPO_ROOT/.env" "$WORKTREE_DIR/.env"
+      echo "Copied .env file"
+    fi
+
+    # Copy .claude/settings.local.json if it exists
+    if [ -f "$REPO_ROOT/.claude/settings.local.json" ]; then
+      mkdir -p "$WORKTREE_DIR/.claude"
+      cp "$REPO_ROOT/.claude/settings.local.json" "$WORKTREE_DIR/.claude/settings.local.json"
+      echo "Copied .claude/settings.local.json file"
+    fi
+
+    # Run mise trust if mise is available and config exists
+    if command -v mise >/dev/null 2>&1; then
+      if [ -f "$WORKTREE_DIR/.mise.toml" ] || [ -f "$WORKTREE_DIR/mise.toml" ]; then
+        mise trust "$WORKTREE_DIR"
+      fi
+    fi
+
+    cd "$WORKTREE_DIR"
+  else
+    echo "Failed to create worktree"
+    return 1
+  fi
+}
+
 # Delete a git tag both locally and on origin with confirmation
 git_tag_delete() {
   TAG_NAME="$1"
-  
+
   echo -e "Are you sure you want to delete tag '${TAG_NAME}' locally and on origin? [y/N]"
   read -r confirm
 
