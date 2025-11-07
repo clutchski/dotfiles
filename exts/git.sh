@@ -44,7 +44,7 @@ git_branch_delete() {
     echo "Usage: git_branch_delete <branch1> [branch2] [branch3] ..."
     return 1
   fi
-  
+
   echo -e "Are you sure you want to delete the following branches locally and on origin? [y/N]"
   for branch in "$@"; do
     echo "  - ${branch}"
@@ -72,7 +72,7 @@ git_branch_squash() {
 }
 
 # Create a git worktree in a parallel directory
-git_worktree_new() {
+git_worktree_create() {
   if [ $# -eq 0 ]; then
     echo "Usage: git_worktree_new <branch_name> [base_branch]"
     echo "  Creates a worktree in a parallel directory"
@@ -130,6 +130,47 @@ git_worktree_new() {
     cd "$WORKTREE_DIR"
   else
     echo "Failed to create worktree"
+    return 1
+  fi
+}
+
+# Delete the current git worktree and cd back to the parent repo.
+git_worktree_delete() {
+  # Check if we're in a worktree
+  REPO_ROOT=$(git rev-parse --show-toplevel)
+  COMMON_DIR=$(git rev-parse --git-common-dir)
+
+  # If common dir ends with just .git (not an absolute path to another repo), we're in main repo
+  if [ "$COMMON_DIR" = ".git" ]; then
+    echo "Error: Not in a git worktree. This command must be run from a worktree."
+    return 1
+  fi
+
+  # If common dir is inside our current repo root, we're in the main repo
+  if [[ "$COMMON_DIR" == "$REPO_ROOT"* ]]; then
+    echo "Error: Not in a git worktree. This command must be run from a worktree."
+    return 1
+  fi
+
+  WORKTREE_PATH="$REPO_ROOT"
+  # The root repo is where the common dir points (minus the /.git)
+  ROOT_REPO="${COMMON_DIR%/.git}"
+
+  echo "Current worktree: $WORKTREE_PATH"
+  echo "Will delete worktree. Confirm? Type [YOLO]"
+  read -r confirm
+
+  if [ "$confirm" != "YOLO" ]; then
+    echo "Operation cancelled."
+    return 1
+  fi
+
+  cd "$ROOT_REPO"
+  git worktree remove "$WORKTREE_PATH"
+  if [ $? -eq 0 ]; then
+    echo "Worktree deleted successfully!"
+  else
+    echo "Failed to delete worktree"
     return 1
   fi
 }
