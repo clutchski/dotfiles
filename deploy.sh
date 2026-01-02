@@ -15,13 +15,10 @@ do
         continue
     fi
 
-    # symlink instead?
     if [ -d $f ]; then
-        mkdir -p ~/.${f}
-        cp -f -r ${f}/* ~/.${f}
+        ln -sfn "$(pwd)/${f}" ~/.${f}
     else
-        rm -f ~/.${f} # handles overwriting symlinks
-        cp -f $f ~/.${f}
+        ln -sf "$(pwd)/${f}" ~/.${f}
     fi
 done
 
