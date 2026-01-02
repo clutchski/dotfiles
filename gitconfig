@@ -8,6 +8,7 @@
     ci = commit
     co = checkout
     lg = log -p
+    wt = worktree
     stashes = stash list
     unstage = reset HEAD
     tags = tag -l --sort=-version:refname
