@@ -13,6 +13,7 @@ brew "fzf"
 cask "rectangle"
 cask "1password-cli"
 cask "rectangle"
+cask "ghostty"
 
 # cask "spotify"
 # cask "iterm2"
