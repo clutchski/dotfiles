@@ -24,3 +24,5 @@ source $ZSH/oh-my-zsh.sh
 DISABLE_AUTO_TITLE=true
 setopt no_prompt_cr
 unsetopt correct_all
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi

@@ -3,6 +3,7 @@
 
 . ~/.exts/git.sh
 . ~/.exts/blackhole.sh
+. ~/.exts/wt.sh
 
 
 # Run claude from the repository root

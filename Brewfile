@@ -1,3 +1,5 @@
+tap "max-sixty/worktrunk"
+
 brew "htop"
 brew "ripgrep"
 brew "wget"
@@ -9,6 +11,7 @@ brew "watchexec"
 brew "mas"
 brew "jq"
 brew "fzf"
+brew "wt"
 
 cask "rectangle"
 cask "1password-cli"
