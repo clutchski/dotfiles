@@ -4,4 +4,5 @@
 
 if command -v wt >/dev/null 2>&1; then
   eval "$(command wt config shell init zsh)"
+  alias wt-create="wt switch --create --base main"
 fi

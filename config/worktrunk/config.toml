@@ -1,1 +1,25 @@
 worktree-path = "../wt_{{ branch | sanitize }}"
+
+[post-create]
+copy-env = '''
+if [ -f "{{ base_worktree_path }}/.env" ]; then
+  cp "{{ base_worktree_path }}/.env" "{{ worktree_path }}/.env"
+  echo "Copied .env file"
+fi
+'''
+
+copy-claude = '''
+if [ -f "{{ base_worktree_path }}/.claude/settings.local.json" ]; then
+  mkdir -p "{{ worktree_path }}/.claude"
+  cp "{{ base_worktree_path }}/.claude/settings.local.json" "{{ worktree_path }}/.claude/settings.local.json"
+  echo "Copied .claude/settings.local.json file"
+fi
+'''
+
+mise-trust = '''
+if command -v mise >/dev/null 2>&1; then
+  if [ -f "{{ worktree_path }}/.mise.toml" ] || [ -f "{{ worktree_path }}/mise.toml" ]; then
+    mise trust "{{ worktree_path }}"
+  fi
+fi
+'''
