@@ -1,5 +1,6 @@
 tap "max-sixty/worktrunk"
 
+brew "stow"
 brew "htop"
 brew "ripgrep"
 brew "wget"

@@ -1,0 +1,3 @@
+# Override stow's default ignores to allow .gitignore
+\.git
+\.gitmodules
