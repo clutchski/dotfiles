@@ -32,6 +32,9 @@
     rebase-main = "!git fetch origin main && git rebase origin/main"
     merge-main = "!git fetch origin main && git merge origin/main"
 
+    # open or create PR for current branch
+    pr = "!gh pr view --web 2>/dev/null || gh pr create --fill --web"
+
 [core]
     whitespace = trailing-space,space-before-tab,cr-at-eol
 	excludesfile = /Users/matt/.gitignore
