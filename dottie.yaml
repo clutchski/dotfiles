@@ -1,0 +1,22 @@
+# Dottie configuration
+
+# Where dotfiles are stored in this repo
+source_dir: home
+
+# Where to link them (default: $HOME)
+target_dir: ~
+
+# Prepend . to filenames when linking
+# e.g., home/vimrc -> ~/.vimrc
+add_dot: true
+
+# Where to store backups of existing files
+backup_dir: ~/.dottie.backup
+
+# What to do on conflict: backup | skip | overwrite
+conflict: backup
+
+# Files/directories to ignore
+ignore:
+  - README.md
+  - LICENSE

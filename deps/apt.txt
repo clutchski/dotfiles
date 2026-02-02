@@ -1,0 +1,8 @@
+# APT packages (one per line)
+# Uncomment or add packages you want to install
+
+# git
+# vim
+# tmux
+# ripgrep
+# fzf

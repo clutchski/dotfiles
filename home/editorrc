@@ -1,0 +1,4 @@
+# Example: becomes ~/.editorrc when linked
+# Replace with your actual dotfiles!
+
+indent_size = 4

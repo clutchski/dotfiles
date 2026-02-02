@@ -1,16 +1,24 @@
-dotfiles
-========
+# dotfiles
 
-```
-git clone https://github.com/clutchski/dotfiles
-cd dotfiles
-./deploy.sh
+Managed with [dottie](https://github.com/clutchski/dottie).
+
+## Quick Start
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/clutchski/dotfiles/main/scripts/bootstrap.sh | bash
 ```
 
-or
+## Manual Setup
 
+```bash
+git clone https://github.com/clutchski/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+dottie run
 ```
-git clone git@github.com:clutchski/dotfiles.git
-cd dotfiles
-./deploy.sh
-```
+
+## Commands
+
+- `dottie status` - Show linked/unlinked files
+- `dottie link` - Create symlinks
+- `dottie link -n` - Dry-run preview
+- `dottie install` - Install dependencies from Brewfile
