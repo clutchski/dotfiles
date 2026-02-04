@@ -17,7 +17,9 @@ case "$1" in
         if command -v mise &>/dev/null; then
             cd "$DOTTIE_ROOT" || exit 1
             mise trust -q 2>/dev/null
-            mise install -q
+            if mise ls --missing 2>/dev/null | grep -q .; then
+                mise install
+            fi
         fi
         ;;
     status)
