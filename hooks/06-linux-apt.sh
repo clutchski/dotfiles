@@ -4,12 +4,9 @@
 PACKAGES=(
     curl
     wget
-    jq
     htop
     git
     zsh
-    ripgrep
-    fzf
 )
 
 # Only run on Linux with apt-get

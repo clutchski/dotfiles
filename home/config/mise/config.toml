@@ -1,6 +1,10 @@
 [tools]
-python = "3.13"
-go = "1.24"
-node = "22.15.0"
-rust = "1.88"
+python = "latest"
+go = "latest"
 
+# CLI tools (cross-platform)
+ripgrep = "latest"
+jq = "latest"
+fzf = "latest"
+gh = "latest"
+watchexec = "latest"
