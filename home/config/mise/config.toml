@@ -1,6 +1,6 @@
 [tools]
-python = "latest"
-go = "latest"
+python = "3.12"
+go = "1.25"
 
 # CLI tools (cross-platform)
 ripgrep = "latest"
