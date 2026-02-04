@@ -15,10 +15,10 @@ echo ""
 echo "        Bootstrapping your dotfiles..."
 echo ""
 
-echo "==> Cloning dotfiles"
+echo "    Dotfiles:  $REPO"
+echo "    Target:    $DOTFILES_DIR"
+echo "    Platform:  $(uname -s)/$(uname -m)"
 echo ""
-echo "    Repository: $REPO"
-echo "    Target:     $DOTFILES_DIR"
 
 if [ -d "$DOTFILES_DIR" ]; then
     git -C "$DOTFILES_DIR" pull --quiet
@@ -26,10 +26,17 @@ else
     git clone --quiet "$REPO" "$DOTFILES_DIR"
 fi
 
-curl -fsSL https://raw.githubusercontent.com/clutchski/dottie/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/clutchski/dottie/main/scripts/install.sh | QUIET=1 bash
 
-echo "==> Running dottie"
+DOTTIE_VERSION=$(dottie version 2>/dev/null | head -1 | awk '{print $2}')
+echo "    Dottie:    ${DOTTIE_VERSION:-latest}"
 echo ""
 
 cd "$DOTFILES_DIR"
 dottie run
+
+echo ""
+echo "    Done. Your dotfiles are ready."
+echo ""
+echo "    Next time: cd $DOTFILES_DIR && dottie run"
+echo ""
