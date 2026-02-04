@@ -7,9 +7,9 @@ case "$1" in
             if [[ "$DOTTIE_DRY_RUN" == "true" ]]; then
                 echo "[dry-run] would install vim-plug"
             else
-                curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+                curl -fsSLo ~/.vim/autoload/plug.vim --create-dirs \
                     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-                vim +PlugInstall +qall
+                vim +PlugInstall +qall < /dev/null > /dev/null 2>&1
             fi
         fi
         ;;
