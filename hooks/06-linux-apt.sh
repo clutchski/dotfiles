@@ -17,8 +17,17 @@ if [[ "$DOTTIE_DRY_RUN" == "true" ]]; then
     exit 0
 fi
 
+all_installed() {
+    for pkg in "${PACKAGES[@]}"; do
+        dpkg -s "$pkg" &>/dev/null || return 1
+    done
+}
+
 case "$1" in
     pre-link)
+        if all_installed; then
+            exit 0
+        fi
         sudo apt-get update
         sudo apt-get install -y "${PACKAGES[@]}"
         ;;

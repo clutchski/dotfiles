@@ -1,10 +1,4 @@
 {
-  "model": "opus",
-  "enabledPlugins": {
-    "gopls-lsp@claude-plugins-official": true,
-    "rust-analyzer-lsp@claude-plugins-official": true
-  },
-  "alwaysThinkingEnabled": true,
   "permissions": {
     "allow": [
       "Bash(tree *)",
@@ -36,5 +30,12 @@
       "Read(~/Pictures/**)",
       "Read(~/Desktop/**)"
     ]
-  }
+  },
+  "model": "opus",
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "commit-commands@claude-code-plugins": true
+  },
+  "alwaysThinkingEnabled": true
 }
