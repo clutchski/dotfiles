@@ -1,0 +1,40 @@
+{
+  "model": "opus",
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true
+  },
+  "alwaysThinkingEnabled": true,
+  "permissions": {
+    "allow": [
+      "Bash(tree *)",
+      "Bash(tree)",
+      "Bash(ls *)",
+      "Bash(ls)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(rg *)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(wc *)",
+      "Bash(file *)",
+      "Bash(stat *)",
+      "Bash(du *)",
+      "Bash(df *)",
+      "Bash(which *)",
+      "Bash(type *)",
+      "Bash(pwd)",
+      "Bash(echo *)",
+      "Bash(env)",
+      "Bash(printenv *)"
+    ],
+    "deny": [
+      "Read(~/Tresorit/**)",
+      "Read(~/Dropbox/**)",
+      "Read(~/Downloads/**)",
+      "Read(~/Pictures/**)",
+      "Read(~/Desktop/**)"
+    ]
+  }
+}
