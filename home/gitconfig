@@ -1,6 +1,8 @@
 [user]
     name = Matt Perpick
-	email = matt@braintrustdata.com
+
+[include]
+    path = ~/.local.gitconfig
 
 [alias]
     # shorthands
