@@ -35,7 +35,7 @@
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
-    "commit-commands@claude-code-plugins": true
+    "commit-commands@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true
 }
