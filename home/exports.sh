@@ -1,7 +1,12 @@
 # Environment variables.
 
 export PYTHONSTARTUP=~/.pythonrc
-export EDITOR=vim
+if command -v nvim >/dev/null 2>&1; then
+    alias vim=nvim
+    export EDITOR=nvim
+else
+    export EDITOR=vim
+fi
 export SCREENDIR=~/.screen
 export HISTFILE=~/.histfile
 export HISTSIZE=1000
