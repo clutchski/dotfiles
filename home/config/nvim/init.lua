@@ -50,8 +50,6 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.lsp.enable("gopls")
 vim.lsp.enable("rust_analyzer")
-vim.lsp.enable("solargraph")
-vim.lsp.enable("pyright")
 
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)
