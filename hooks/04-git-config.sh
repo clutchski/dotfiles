@@ -21,7 +21,6 @@ EMAIL=$(echo "$RAW" | base64 -d)
 case "$1" in
     post-link)
         printf '[user]\n    email = %s\n' "$EMAIL" > "$LOCAL_CONFIG"
-        echo "Wrote $LOCAL_CONFIG with profile email"
         ;;
     status)
         [[ -f "$LOCAL_CONFIG" ]] && grep -q "$EMAIL" "$LOCAL_CONFIG"

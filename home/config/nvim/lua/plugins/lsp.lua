@@ -11,7 +11,7 @@ return {
         dependencies = { "mason-org/mason.nvim" },
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "gopls", "rust_analyzer" },
+                ensure_installed = { "gopls", "rust_analyzer", "solargraph", "pyright" },
             })
         end,
     },
