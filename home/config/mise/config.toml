@@ -1,5 +1,5 @@
 [tools]
-python = "3.15"
+python = "3.14"
 go = "1.25"
 
 # CLI tools (cross-platform)
