@@ -1,6 +1,6 @@
 [user]
     name = Matt Perpick
-	email = matthewperpick@gmail.com
+	email = matt@braintrustdata.com
 
 [alias]
     # shorthands
@@ -37,7 +37,6 @@
 
 [core]
     whitespace = trailing-space,space-before-tab,cr-at-eol
-	excludesfile = /Users/matt/.gitignore
 
 [color]
     ui = true
