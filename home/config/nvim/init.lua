@@ -22,9 +22,8 @@ vim.opt.textwidth = 79
 -- ; -> : for quick command mode
 vim.keymap.set("n", ";", ":")
 
--- Disable ex-mode and recording
+-- Disable ex-mode
 vim.keymap.set({ "n", "v" }, "Q", "<Nop>")
-vim.keymap.set({ "n", "v" }, "q", "<Nop>")
 
 -- Buffer navigation
 vim.keymap.set("n", "<Tab>", ":bnext<CR>", { silent = true })
@@ -36,6 +35,14 @@ vim.keymap.set({ "i", "n", "v" }, "<F1>", "<Esc>")
 -- Navigate visual lines
 vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")
+
+-- Close quickfix list after selecting an item
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "qf",
+    callback = function()
+        vim.keymap.set("n", "<CR>", "<CR>:cclose<CR>", { buffer = true, silent = true })
+    end,
+})
 
 -- ==========================================================================
 -- Bootstrap lazy.nvim
