@@ -5,6 +5,7 @@
 vim.g.mapleader = " "
 
 vim.opt.number = true
+vim.opt.mouse = "a"
 vim.opt.background = "dark"
 vim.opt.undofile = true
 vim.opt.wildignore = "*.sw*,*.bak,*.pyc,*.class,*.mako.py,*.o,*.egg,*.a"
