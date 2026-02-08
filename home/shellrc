@@ -1,4 +1,0 @@
-# Example: becomes ~/.shellrc when linked
-# Replace with your actual dotfiles!
-
-alias ll='ls -la'
