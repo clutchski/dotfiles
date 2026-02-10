@@ -17,7 +17,7 @@ fi
 mise-trust = '''
 if command -v mise >/dev/null 2>&1; then
   if [ -f "{{ worktree_path }}/.mise.toml" ] || [ -f "{{ worktree_path }}/mise.toml" ]; then
-    mise trust "{{ worktree_path }}"
+    mise trust -y "{{ worktree_path }}"
   fi
 fi
 '''
