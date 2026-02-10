@@ -21,3 +21,10 @@ if command -v mise >/dev/null 2>&1; then
   fi
 fi
 '''
+
+[projects]
+
+[projects."github.com/braintrustdata/braintrust-sdk"]
+approved-commands = [
+    "mise install",
+]
