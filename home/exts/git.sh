@@ -17,25 +17,45 @@ git_force_push() {
   fi
 }
 
-# Prune remote branches and delete local branches that have been deleted on the remote
-git_branch_cleanup() {
+# Delete local branches and worktrees that have been merged or deleted on the remote.
+# Uses worktrunk (wt) to handle worktree+branch cleanup in one pass.
+git_cleanup() {
+    if ! command -v wt >/dev/null 2>&1; then
+        echo "error: wt (worktrunk) is required but not installed"
+        return 1
+    fi
+
     git fetch -p
 
-    deleted_branches=$(git branch -vv | grep ': gone]' | awk '{print $1}')
+    local default_branch
+    default_branch=$(git rev-parse --abbrev-ref origin/HEAD 2>/dev/null | sed 's|origin/||')
+    : "${default_branch:=main}"
 
-    if [ -z "$deleted_branches" ]; then
+    # Find branches that are integrated or same-commit (safe to delete),
+    # excluding the default branch and the current worktree.
+    branches=$(wt list --format=json --branches | jq -r --arg default "$default_branch" '
+        .[] | select(
+            (.is_main | not) and
+            (.is_current | not) and
+            (.branch != $default) and
+            (.main_state == "integrated" or .main_state == "empty" or .main_state == "same_commit")
+        ) | .branch
+    ')
+
+    if [ -z "$branches" ]; then
+        echo "Nothing to clean up."
         return 0
     fi
 
-    echo -e "\nDo you want to delete these local branches? [y/N]"
-    echo "$deleted_branches"
+    echo -e "\nDelete these merged branches and their worktrees? [y/N]"
+    echo "$branches"
     read -r confirm
 
     if [[ "$confirm" =~ ^[Yy]$ ]]; then
-        echo "$deleted_branches" | xargs -r git branch -D
-        echo "Branches deleted successfully."
+        echo "$branches" | xargs wt remove --force --force-delete --yes
+        echo "Cleanup complete."
     else
-        echo "Operation cancelled."
+        echo "Cancelled."
     fi
 }
 # Delete git branches both locally and on origin with confirmation
