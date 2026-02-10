@@ -1,2 +1,3 @@
 font-family = Menlo
 theme = clutchski
+shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo
