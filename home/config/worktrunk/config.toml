@@ -1,4 +1,13 @@
-worktree-path = "../wt_{{ branch | sanitize }}"
+worktree-path = "../wt_{{ repo | replace('braintrust-sdk', 'sdk') | sanitize }}_{{ branch | sanitize }}"
+
+[post-create]
+mise-trust = '''
+if command -v mise >/dev/null 2>&1; then
+  if [ -f "{{ worktree_path }}/.mise.toml" ] || [ -f "{{ worktree_path }}/mise.toml" ]; then
+    mise trust -y --cd "{{ worktree_path }}"
+  fi
+fi
+'''
 
 [post-switch]
 copy-env = '''
@@ -11,14 +20,6 @@ copy-claude = '''
 if [ -f "{{ primary_worktree_path }}/.claude/settings.local.json" ]; then
   mkdir -p "{{ worktree_path }}/.claude"
   cp "{{ primary_worktree_path }}/.claude/settings.local.json" "{{ worktree_path }}/.claude/settings.local.json"
-fi
-'''
-
-mise-trust = '''
-if command -v mise >/dev/null 2>&1; then
-  if [ -f "{{ worktree_path }}/.mise.toml" ] || [ -f "{{ worktree_path }}/mise.toml" ]; then
-    mise trust -y "{{ worktree_path }}"
-  fi
 fi
 '''
 
