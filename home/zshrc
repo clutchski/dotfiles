@@ -12,8 +12,7 @@ export ZSH_THEME="clutchski"
 export DISABLE_AUTO_UPDATE="true"
 
 # Customize to your needs...
-. ~/.exports.sh
-. ~/.functions.sh
+. ~/.profile.sh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 plugins=(gitfast macos python pip extract rust mise wd)
@@ -24,5 +23,3 @@ source $ZSH/oh-my-zsh.sh
 DISABLE_AUTO_TITLE=true
 setopt no_prompt_cr
 unsetopt correct_all
-
-if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi

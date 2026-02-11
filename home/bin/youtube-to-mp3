@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+yt-dlp --extract-audio --audio-format mp3 "${1:?Usage: youtube-to-mp3 <url>}"

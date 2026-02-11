@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
-etchost_block () {
-  if [[ $# -eq 0 ]]; then
+# Manage blocked hosts in /etc/hosts.
+
+block() {
+  if [ $# -eq 0 ]; then
     # no args == show list of already-blocked hosts
     grep --color=never --ignore-case --extended-regexp "^##\s+block" /etc/hosts | cut -d" " -f 3-
   else
     # loop through hosts and block each one on ipv4 + ipv6
-    while (($#)); do
+    while [ $# -gt 0 ]; do
       if ! grep -q "## block $1" /etc/hosts; then
         echo "echo \"\n## block $1\"        >> /etc/hosts" | sudo sh
         echo "echo \"127.0.0.1  $1 www.$1\" >> /etc/hosts" | sudo sh
@@ -18,14 +21,14 @@ etchost_block () {
   fi
 }
 
-etchost_unblock () {
-  if [[ $# -eq 0 ]]; then
+unblock() {
+  if [ $# -eq 0 ]; then
     # no args == remove all blocked hosts
     newContents=$(sed '/## block /,/## \/block/d' /etc/hosts | sed '/./,/^$/!d')
     echo "echo \"$newContents\" > /etc/hosts" | sudo sh
   else
     # remove specified hosts and squash multiple empty lines
-    while (($#)); do
+    while [ $# -gt 0 ]; do
       newContents=$(sed "/## block $1/,/## \/block/d" /etc/hosts | sed '/./,/^$/!d')
       echo "echo \"$newContents\" > /etc/hosts" | sudo sh
       shift
@@ -33,11 +36,31 @@ etchost_unblock () {
   fi
 }
 
-
-etchost_block_blackholes() {
-    while read b; do
-        etchost_block $b
-    done < ~/.blackholes
+sync() {
+  while read -r b; do
+    block "$b"
+  done < ~/.blackholes
 }
 
-
+case "${1:-}" in
+  block)
+    shift
+    block "$@"
+    ;;
+  unblock)
+    shift
+    unblock "$@"
+    ;;
+  sync)
+    sync
+    ;;
+  *)
+    echo "Usage: blackhole <command>"
+    echo ""
+    echo "Commands:"
+    echo "  block [host...]   Block hosts (no args to list blocked)"
+    echo "  unblock [host...] Unblock hosts (no args to unblock all)"
+    echo "  sync              Block all hosts from ~/.blackholes"
+    exit 1
+    ;;
+esac

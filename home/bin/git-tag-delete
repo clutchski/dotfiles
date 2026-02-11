@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Delete a git tag both locally and on origin with confirmation.
+
+TAG_NAME="${1:?Usage: git tag-delete <tag>}"
+
+echo -e "Are you sure you want to delete tag '${TAG_NAME}' locally and on origin? [y/N]"
+read -r confirm
+
+if [[ "$confirm" =~ ^[Yy]$ ]]; then
+  git tag -d "${TAG_NAME}"
+  git push origin --delete "refs/tags/${TAG_NAME}"
+  echo "Tag '${TAG_NAME}' deleted"
+fi

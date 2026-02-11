@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Force push the current branch, as long as it's not master or main.
+
+branch=$(git rev-parse --abbrev-ref HEAD)
+
+if [ "$branch" = "main" ] || [ "$branch" = "master" ]; then
+  echo "No force pushing to '$branch'"
+  exit 1
+else
+  git push origin --force-with-lease "$branch"
+fi

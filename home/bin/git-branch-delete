@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Delete git branches both locally and on origin with confirmation.
+
+if [ $# -eq 0 ]; then
+  echo "Usage: git branch-delete <branch1> [branch2] [branch3] ..."
+  exit 1
+fi
+
+echo -e "Are you sure you want to delete the following branches locally and on origin? [y/N]"
+for branch in "$@"; do
+  echo "  - ${branch}"
+done
+read -r confirm
+
+if [[ "$confirm" =~ ^[Yy]$ ]]; then
+  for branch in "$@"; do
+    echo "Deleting branch '${branch}'..."
+    git branch -D "${branch}"
+    git push origin --delete "${branch}"
+    echo "Branch '${branch}' deleted"
+  done
+else
+  echo "Operation cancelled."
+fi
