@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Find and manage processes listening on ports.
+
+list() {
+  lsof -iTCP -sTCP:LISTEN -P -n 2>/dev/null
+}
+
+find_port() {
+  if [ $# -eq 0 ]; then
+    echo "Usage: porthole find <port>" >&2
+    exit 1
+  fi
+  lsof -iTCP:"$1" -sTCP:LISTEN -P -n 2>/dev/null
+}
+
+kill_port() {
+  if [ $# -eq 0 ]; then
+    echo "Usage: porthole kill <port>" >&2
+    exit 1
+  fi
+  local port="$1"
+  local pids
+  pids=$(lsof -iTCP:"$port" -sTCP:LISTEN -P -n -t 2>/dev/null || true)
+  if [ -z "$pids" ]; then
+    echo "No process found listening on port $port" >&2
+    exit 1
+  fi
+  for pid in $pids; do
+    local name
+    name=$(ps -p "$pid" -o comm= 2>/dev/null || echo "unknown")
+    kill "$pid"
+    echo "Killed process $pid ($name) on port $port"
+  done
+}
+
+case "${1:-}" in
+  list)
+    list
+    ;;
+  find)
+    shift
+    find_port "$@"
+    ;;
+  kill)
+    shift
+    kill_port "$@"
+    ;;
+  *)
+    echo "Usage: porthole <command>"
+    echo ""
+    echo "Commands:"
+    echo "  list          Show all listening ports"
+    echo "  find <port>   Show process listening on a port"
+    echo "  kill <port>   Kill process listening on a port"
+    exit 1
+    ;;
+esac
