@@ -4,15 +4,11 @@ set -euo pipefail
 # Find and manage processes listening on ports.
 
 list() {
-  lsof -iTCP -sTCP:LISTEN -P -n 2>/dev/null
-}
-
-find_port() {
   if [ $# -eq 0 ]; then
-    echo "Usage: porthole find <port>" >&2
-    exit 1
+    lsof -iTCP -sTCP:LISTEN -P -n 2>/dev/null
+  else
+    lsof -iTCP:"$1" -sTCP:LISTEN -P -n 2>/dev/null
   fi
-  lsof -iTCP:"$1" -sTCP:LISTEN -P -n 2>/dev/null
 }
 
 kill_port() {
@@ -37,11 +33,8 @@ kill_port() {
 
 case "${1:-}" in
   list)
-    list
-    ;;
-  find)
     shift
-    find_port "$@"
+    list "$@"
     ;;
   kill)
     shift
@@ -51,8 +44,7 @@ case "${1:-}" in
     echo "Usage: porthole <command>"
     echo ""
     echo "Commands:"
-    echo "  list          Show all listening ports"
-    echo "  find <port>   Show process listening on a port"
+    echo "  list [port]   Show listening ports (optionally filter by port)"
     echo "  kill <port>   Kill process listening on a port"
     exit 1
     ;;
