@@ -5,12 +5,15 @@ export PNPM_HOME="$HOME/Library/pnpm"
 export PATH=$PATH:/usr/local/bin:~/bin:~/.bin:/opt/homebrew/bin:/usr/local/go/bin/:~/.cargo/bin:$PNPM_HOME:~/.local/bin:~/go/bin
 
 export PYTHONSTARTUP=~/.pythonrc
+
 if command -v nvim >/dev/null 2>&1; then
     alias vim=nvim
     export EDITOR=nvim
 else
     export EDITOR=vim
 fi
+
+alias ll='ls -lah'
 
 export SCREENDIR=~/.screen
 export HISTFILE=~/.histfile

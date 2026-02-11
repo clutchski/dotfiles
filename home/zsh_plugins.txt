@@ -1,0 +1,3 @@
+ohmyzsh/ohmyzsh path:plugins/extract
+ohmyzsh/ohmyzsh path:plugins/wd
+zsh-users/zsh-autosuggestions

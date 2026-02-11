@@ -5,6 +5,7 @@ brew "wget"
 brew "zsh"
 brew "watch"
 brew "mise"
+brew "antidote"
 brew "wt"
 
 cask "rectangle"
