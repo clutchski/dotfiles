@@ -13,6 +13,11 @@ else
     export EDITOR=vim
 fi
 
+if ls --color=auto / >/dev/null 2>&1; then
+    alias ls='ls --color=auto'
+else
+    alias ls='ls -G'
+fi
 alias ll='ls -lah'
 
 export SCREENDIR=~/.screen
