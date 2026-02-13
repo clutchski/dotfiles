@@ -1,5 +1,5 @@
-tap "max-sixty/worktrunk"
-
+tap "clutchski/tap"
+brew "dottie"
 brew "htop"
 brew "wget"
 brew "zsh"

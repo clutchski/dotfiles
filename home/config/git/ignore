@@ -11,3 +11,5 @@
 .rvmrc
 *.o
 *.a
+
+**/.claude/settings.local.json
