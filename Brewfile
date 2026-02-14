@@ -1,5 +1,5 @@
 tap "clutchski/tap"
-brew "dottie"
+brew "clutchski/tap/dottie"
 brew "htop"
 brew "wget"
 brew "zsh"
