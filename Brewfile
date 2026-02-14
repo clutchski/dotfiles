@@ -1,5 +1,6 @@
-tap "clutchski/tap"
 brew "clutchski/tap/dottie"
+brew "withgraphite/tap/graphite"
+
 brew "htop"
 brew "wget"
 brew "zsh"
@@ -9,10 +10,10 @@ brew "antidote"
 brew "wt"
 
 cask "rectangle"
+cask "ghostty"
 
 # brew "mas"
 # cask "1password-cli"
-# cask "ghostty"
 # cask "spotify"
 # cask "iterm2"
 # brew "ffmpeg"
