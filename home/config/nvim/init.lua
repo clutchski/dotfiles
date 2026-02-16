@@ -64,6 +64,22 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- ==========================================================================
+-- Prose mode (toggle Goyo, Limelight, and disable completion)
+-- ==========================================================================
+
+vim.g.prose_mode = false
+vim.api.nvim_create_user_command("Prose", function()
+    vim.g.prose_mode = not vim.g.prose_mode
+    if vim.g.prose_mode then
+        vim.cmd("Goyo")
+        vim.cmd("Limelight")
+    else
+        vim.cmd("Limelight!")
+        vim.cmd("Goyo!")
+    end
+end, {})
+
+-- ==========================================================================
 -- Bootstrap lazy.nvim
 -- ==========================================================================
 
