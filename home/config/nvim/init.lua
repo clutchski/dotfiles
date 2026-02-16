@@ -9,6 +9,7 @@ vim.opt.mouse = "a"
 vim.opt.background = "dark"
 vim.opt.undofile = true
 vim.opt.wildignore = "*.sw*,*.bak,*.pyc,*.class,*.mako.py,*.o,*.egg,*.a"
+vim.opt.swapfile = false
 
 -- Formatting
 vim.opt.expandtab = true
