@@ -1,3 +1,12 @@
-font-family = Menlo
+# font-family = Menlo
+font-family = Monaco
+
+
+# theme = Tomorrow Night Bright
+# theme = Tomorrow Night Eighties
+# theme = Tomorrow Night
+# theme = Vague 
 theme = clutchski
+
+
 shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo

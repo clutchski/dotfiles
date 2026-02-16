@@ -8,6 +8,7 @@ brew "watch"
 brew "mise"
 brew "antidote"
 brew "wt"
+brew "starship"
 
 cask "rectangle"
 cask "ghostty"

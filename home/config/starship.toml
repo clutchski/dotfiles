@@ -1,0 +1,37 @@
+format = """
+$status\
+$directory$git_branch\
+$character"""
+
+right_format = "$cmd_duration"
+
+[status]
+disabled = false
+symbol = "·"
+not_executable_symbol = "·"
+not_found_symbol = "·"
+sigint_symbol = "·"
+signal_symbol = "·"
+format = "[$symbol]($style) "
+style = "bold red"
+map_symbol = true
+recognize_signal_code = false
+
+[directory]
+truncation_length = 8
+truncate_to_repo = false
+format = "[$path]($style)"
+style = "bold dimmed white"
+
+[git_branch]
+format = "[:$branch]($style) "
+style = "bold dimmed yellow"
+
+[cmd_duration]
+min_time = 2000
+format = "[$duration]($style) "
+style = "dimmed yellow"
+
+[character]
+success_symbol = "[>](grey)"
+error_symbol = "[>](bold red)"

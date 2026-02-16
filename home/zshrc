@@ -22,17 +22,6 @@ setopt pushd_ignore_dups    # no duplicate dirs on stack
 fpath=(~/.zsh/completions ${HOMEBREW_PREFIX:-$(brew --prefix)}/share/zsh/site-functions $fpath)
 autoload -Uz compinit && compinit
 
-# Prompt -- user@host:~/path(branch)$
-autoload -Uz vcs_info
-precmd() { vcs_info }
-setopt prompt_subst
-zstyle ':vcs_info:git:*' formats '%F{yellow}(%b)%f'
-
-if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="green"; fi
-PROMPT="%F{${NCOLOR}}%n%f@%F{cyan}%m%f:%F{magenta}%~%f"'${vcs_info_msg_0_}%F{red}%(!.#.$)%f '
-PROMPT2='%F{red}\ %f'
-RPS1='%(?..%F{red}%? ↵%f)'  # show exit code on failure
-
 # Antidote plugin manager (plugins listed in ~/.zsh_plugins.txt)
 source ${HOMEBREW_PREFIX:-$(brew --prefix)}/share/antidote/antidote.zsh
 antidote load ~/.zsh_plugins.txt
@@ -41,6 +30,8 @@ antidote load ~/.zsh_plugins.txt
 if command -v mise &>/dev/null; then
     eval "$(mise activate zsh)"
 fi
+
+eval "$(starship init zsh)"
 
 # Misc
 DISABLE_AUTO_TITLE=true     # don't let shell override terminal title
