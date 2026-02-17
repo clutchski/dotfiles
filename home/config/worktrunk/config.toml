@@ -22,10 +22,3 @@ if [ -f "{{ primary_worktree_path }}/.claude/settings.local.json" ]; then
   cp "{{ primary_worktree_path }}/.claude/settings.local.json" "{{ worktree_path }}/.claude/settings.local.json"
 fi
 '''
-
-[projects]
-
-[projects."github.com/braintrustdata/braintrust-sdk"]
-approved-commands = [
-    "mise install",
-]
