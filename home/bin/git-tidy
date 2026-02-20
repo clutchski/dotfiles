@@ -2,7 +2,6 @@
 set -euo pipefail
 
 # Delete local branches and worktrees that have been merged or deleted on the remote.
-# Uses worktrunk (wt) to handle worktree+branch cleanup in one pass.
 
 if ! command -v wt >/dev/null 2>&1; then
     echo "error: wt (worktrunk) is required but not installed"
@@ -11,16 +10,10 @@ fi
 
 git fetch -p
 
-default_branch=$(git rev-parse --abbrev-ref origin/HEAD 2>/dev/null | sed 's|origin/||')
-: "${default_branch:=main}"
-
-# Find branches that are integrated or same-commit (safe to delete),
-# excluding the default branch and the current worktree.
-branches=$(wt list --format=json --branches | jq -r --arg default "$default_branch" '
+branches=$(wt list --format=json --branches | jq -r '
     .[] | select(
         (.is_main | not) and
         (.is_current | not) and
-        (.branch != $default) and
         (.main_state == "integrated" or .main_state == "empty" or .main_state == "same_commit" or (.main_state == "diverged" and (has("remote") | not)))
     ) | .branch
 ')
@@ -30,7 +23,7 @@ if [ -z "$branches" ]; then
     exit 0
 fi
 
-echo -e "\nDelete these merged branches and their worktrees? [y/N]"
+echo "Delete these merged branches and their worktrees? [y/N]"
 echo "$branches"
 read -r confirm
 

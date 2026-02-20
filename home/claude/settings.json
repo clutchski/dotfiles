@@ -44,8 +44,6 @@
   },
   "model": "opus",
   "enabledPlugins": {
-    "commit-commands@claude-code-plugins": true,
-    "agent-sdk-dev@claude-code-plugins": true
-  },
-  "alwaysThinkingEnabled": true
+    "commit-commands@claude-plugins-official": true
+  }
 }
