@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Delete local branches and worktrees that have been merged or deleted on the remote.
+# Delete local branches (and their worktrees) that are merged into main
+# or whose upstream has been deleted on the remote.
 
 if ! command -v wt >/dev/null 2>&1; then
     echo "error: wt (worktrunk) is required but not installed"
@@ -10,20 +11,28 @@ fi
 
 git fetch -p
 
-branches=$(wt list --format=json --branches | jq -r '
-    .[] | select(
-        (.is_main | not) and
-        (.is_current | not) and
-        (.main_state == "integrated" or .main_state == "empty" or .main_state == "same_commit" or (.main_state == "diverged" and (has("remote") | not)))
-    ) | .branch
-')
+main_branch=$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null \
+    | sed 's|^origin/||' || true)
+main_branch=${main_branch:-main}
+
+current=$(git symbolic-ref --quiet --short HEAD || true)
+
+merged=$(git branch --merged "$main_branch" --format='%(refname:short)')
+gone=$(git for-each-ref --format='%(refname:short) %(upstream:track)' refs/heads/ \
+    | awk '/\[gone\]/ {print $1}')
+
+branches=$(printf '%s\n%s\n' "$merged" "$gone" \
+    | awk 'NF' \
+    | grep -vxF "$main_branch" \
+    | grep -vxF "${current:-$main_branch}" \
+    | sort -u || true)
 
 if [ -z "$branches" ]; then
     echo "Nothing to clean up."
     exit 0
 fi
 
-echo "Delete these merged branches and their worktrees? [y/N]"
+echo "Delete these branches and their worktrees? [y/N]"
 echo "$branches"
 read -r confirm
 
