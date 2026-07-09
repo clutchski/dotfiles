@@ -18,7 +18,9 @@ if ls --color=auto / >/dev/null 2>&1; then
 else
     alias ls='ls -G'
 fi
-alias ll='ls -lah'
+
+alias ll='ls -lh'
+alias la='ls -lah'
 
 export SCREENDIR=~/.screen
 export HISTFILE=~/.histfile
