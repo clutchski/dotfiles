@@ -1,5 +1,4 @@
 brew "clutchski/tap/dottie"
-brew "withgraphite/tap/graphite"
 
 brew "htop"
 brew "wget"
@@ -7,7 +6,7 @@ brew "zsh"
 brew "watch"
 brew "mise"
 brew "antidote"
-brew "wt"
+brew "worktrunk"
 brew "starship"
 
 cask "rectangle"
