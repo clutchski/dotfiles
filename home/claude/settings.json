@@ -32,18 +32,17 @@
       "Bash(gh issue status *)",
       "Bash(gh repo view *)",
       "Bash(gh run view *)",
-      "Bash(gh run list *)"
+      "Bash(gh run list *)",
+      "Bash(bd *)",
+      "Bash(bd)"
     ],
-    "deny": [
-      "Read(~/Tresorit/**)",
-      "Read(~/Dropbox/**)",
-      "Read(~/Downloads/**)",
-      "Read(~/Pictures/**)",
-      "Read(~/Desktop/**)"
-    ]
+    "defaultMode": "auto"
   },
-  "model": "opus",
+  "model": "sonnet",
   "enabledPlugins": {
-    "commit-commands@claude-plugins-official": true
-  }
+    "commit-commands@claude-plugins-official": true,
+    "gopls-lsp@claude-plugins-official": true
+  },
+  "skipAutoPermissionPrompt": true,
+  "skipWorkflowUsageWarning": true
 }

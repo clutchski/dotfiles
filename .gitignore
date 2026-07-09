@@ -1,4 +1,5 @@
 blackholes
 .claude/settings.local.json
+home/claude/settings.local.json
 config/gh
 config/temporalio
